@@ -10,21 +10,20 @@ function Navigation() {
 
                 <div className="nav-logo">
                     <LuListMusic style={{ fontSize: '30px', marginRight: '10px', display: 'flex', alignContent: 'center', color: '#1db954' }} />
-                    Spotify Dashboard
+                    Spotify Dashboard Concept
                 </div>
 
                 <div className="nav-buttons">
+
+                    <button className="theme-button">
+                        <FaMoon style={{ fontSize: '20px', marginRight: '10px', display: 'flex', alignContent: 'center' }} />
+                        <span> Dark </span>
+                    </button>
 
                     <button className="accounts-button">
 
                         <MdAccountCircle style={{ fontSize: '25px', marginRight: '10px', display: 'flex', alignContent: 'center' }} />
                         <span> Log in </span>
-
-                    </button>
-
-                    <button className="accounts-button">
-                        <FaMoon style={{ fontSize: '20px', marginRight: '10px', display: 'flex', alignContent: 'center' }} />
-                        <span> Dark </span>
 
                     </button>
                 </div>
