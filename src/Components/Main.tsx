@@ -21,7 +21,6 @@ function Main() {
                     </div>
                 </div>
 
-
                 <div className="dashboard-component">
                     <div className="component3">
                         <span> Dashboard Component 3 (best/worst performing comments) </span>

@@ -2,7 +2,7 @@ import './App.css';
 import  Navigation  from './Components/Navigation.tsx';
 import  Main  from './Components/Main.tsx';
 import  Footer  from './Components/Footer.tsx';
-
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
 
@@ -12,6 +12,8 @@ function App() {
       <Navigation />
       <Main />
       <Footer />
+
+      <Analytics />
 
     </div>
   )
