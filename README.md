@@ -1,3 +1,1 @@
-Dashboard project 
-
-This one isn't properly fleshed out of an idea yet - but stay tuned, in the coming weeks i'll have a working idea for this project.
+Reddit Stats Dashboard. Enter in your profile name and get back a dashboard full of reddit statistics., visualised in a clean, modern UI. 
