@@ -1,5 +1,5 @@
+import { BsReddit } from "react-icons/bs";
 import { FaMoon } from "react-icons/fa";
-import { LuListMusic } from "react-icons/lu";
 import { MdAccountCircle } from "react-icons/md";
 
 function Navigation() {
@@ -9,15 +9,14 @@ function Navigation() {
             <div className="Navigation">
 
                 <div className="nav-logo">
-                    <LuListMusic style={{ fontSize: '30px', marginRight: '10px', display: 'flex', alignContent: 'center', color: '#1db954' }} />
-                    Spotify Dashboard Concept
+                    <BsReddit style={{ fontSize: '30px', marginRight: '10px', display: 'flex', alignContent: 'center', color: '#FF5700' }} />
+                    Reddit Dashboard
                 </div>
 
                 <div className="nav-buttons">
 
                     <button className="theme-button">
-                        <FaMoon style={{ fontSize: '20px', marginRight: '10px', display: 'flex', alignContent: 'center' }} />
-                        <span> Dark </span>
+                        <FaMoon style={{ fontSize: '20px', display: 'flex', alignContent: 'center' }} />
                     </button>
 
                     <button className="accounts-button">
