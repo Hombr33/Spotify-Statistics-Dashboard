@@ -13,9 +13,6 @@ function Footer() {
                 <span> Daniel Steele ©2025  </span>
             </div>
 
-            <div className="footer-flavourText">
-              
-            </div>
 
             <Tippy
                 content={"View my Stuff :)"}

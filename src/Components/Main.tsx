@@ -1,4 +1,8 @@
-import Profile  from './Profile.tsx';
+import Profile from './Profile.tsx';
+import Posts from './Posts.tsx';
+import Comments from './Comments.tsx';
+import Communities from './Communities.tsx';
+
 
 function Main() {
 
@@ -11,19 +15,20 @@ function Main() {
 
                 <div className="dashboard-component">
                     <div className="component1">
-                        <span> Dashboard Component 1 ( most active communities) (pie chart + widget) </span>
+                        <Posts />
                     </div>
                 </div>
 
                 <div className="dashboard-component">
                     <div className="component2">
-                        <span> Dashboard Component 2 (best/worst performing post) </span>
+                        <Communities />
+
                     </div>
                 </div>
 
                 <div className="dashboard-component">
                     <div className="component3">
-                        <span> Dashboard Component 3 (best/worst performing comments) </span>
+                        <Comments />
                     </div>
 
                 </div>

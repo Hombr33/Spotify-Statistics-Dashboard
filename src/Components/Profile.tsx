@@ -3,6 +3,20 @@ import { PiConfetti } from "react-icons/pi";
 
 function Profile() {
 
+    const fetchRedditAccount = async () => {
+
+        try {
+            const response = await fetch('api/fetchAccounts');
+            const json = await response.json();
+
+            const data = json;
+            console.log(data);
+
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
     return (
         <section className="Profile">
 
@@ -42,6 +56,7 @@ function Profile() {
                 <span id="stat"> 12 </span> posts
 
             </div>
+            <button onClick={fetchRedditAccount}> Fetch reddit account data!  </button>
         </section>
     )
 }

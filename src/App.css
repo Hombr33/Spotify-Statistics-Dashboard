@@ -123,21 +123,17 @@ body {
 }
 
 .dashboard-component {
-  background-color: rgb(172, 96, 45);
+ background-color: rgb(46, 43, 43);
   height: 250px;
   margin: 10px;
   border-radius: 8px;
   padding: 10px;
-  color: #242424;
-  font-size: 1.3rem;
+  color: whitesmoke;
+  font-size: 1.2rem;
   font-family: 'Figtree', sans-serif;
   font-weight: 500;
 }
 
-.dashboard-component:hover {
-  transform: translateY(-0.5rem);
-  transition: 0.1s ease-in;
-}
 
 .Dashboard>.dashboard-component:nth-child(1) {
   grid-column: span 2;
@@ -145,8 +141,6 @@ body {
 
 .Dashboard>.dashboard-component:nth-child(2) {
   grid-column: span 1;
-  background-color: transparent;
-  color: #FF5700;
 }
 
 .Dashboard>.dashboard-component:nth-child(2):hover {
@@ -245,11 +239,10 @@ body {
   display: flex;
   padding: 10px;
   margin: 10px;
-    margin-left: 0px;
-
+  margin-left: 0px;
   width: 20%;
   height: 50px;
-  background-color: #FF5700;
+  border: 2px solid #FF5700;
   border-radius: 8px;
   color: white;
   font-weight: 350;
