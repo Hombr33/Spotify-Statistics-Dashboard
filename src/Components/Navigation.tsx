@@ -9,7 +9,7 @@ function Navigation() {
             <div className="Navigation">
 
                 <div className="nav-logo">
-                    <BsReddit style={{ fontSize: '30px', marginRight: '10px', display: 'flex', alignContent: 'center', color: '#FF5700' }} />
+                    <BsReddit style={{ fontSize: '30px', display: 'flex', alignContent: 'center', color: '#FF5700' }} />
                     Reddit Dashboard
                 </div>
 
@@ -20,13 +20,9 @@ function Navigation() {
                     </button>
 
                     <button className="accounts-button">
-
-                        <MdAccountCircle style={{ fontSize: '25px', marginRight: '10px', display: 'flex', alignContent: 'center' }} />
-                        <span> Log in </span>
-
+                        <MdAccountCircle style={{ fontSize: '25px', display: 'flex', alignContent: 'center' }} />
                     </button>
                 </div>
-
             </div>
         </div>
     )

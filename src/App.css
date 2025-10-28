@@ -25,22 +25,23 @@ body {
 .Navigation-container {
   display: flex;
   width: 100%;
-  height: fit-content;
+  height: 80px;
+  background-color: rgb(46, 43, 43);
+  align-items: center;
 }
 
 .Navigation {
 
   display: flex;
   flex-direction: row;
-  height: 75px;
+  height: fit-content;
   width: 80%;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
+  position: relative;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgb(46, 43, 43);
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
 }
@@ -89,6 +90,10 @@ body {
   padding: 10px;
 }
 
+.nav-logo svg {
+  margin-right: 10px;
+}
+
 .App {
 
   display: flex;
@@ -107,7 +112,7 @@ body {
   width: 100%;
   min-height: fit-content;
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .Dashboard {
@@ -123,7 +128,7 @@ body {
 }
 
 .dashboard-component {
- background-color: rgb(46, 43, 43);
+  background-color: rgb(46, 43, 43);
   height: 250px;
   margin: 10px;
   border-radius: 8px;
@@ -224,7 +229,6 @@ body {
   align-items: flex-start;
   justify-content: flex-start;
   border-radius: 12px;
-  padding: 10px;
   padding-left: 20px;
 }
 
@@ -235,7 +239,7 @@ body {
   width: 100%;
 }
 
-.profile-mid{
+.profile-mid {
   display: flex;
   padding: 10px;
   margin: 10px;
@@ -273,9 +277,10 @@ body {
 }
 
 .profile-stats {
+  display: flex;
   font-size: 1.5rem;
   width: fit-content;
-
+  flex-direction: row;
 }
 
 .user-desc {
@@ -304,10 +309,20 @@ body {
   vertical-align: middle;
 }
 
-
-#stat {
+#stat-number {
   font-size: 2.3rem;
   color: #FF5700;
+  padding-right: 8px;
+}
+
+#stat {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding-right: 10px;
+  padding-bottom: 5px;
 }
 
 @media (min-width:300px) and (max-width: 1000px) {
@@ -334,4 +349,74 @@ body {
   .Dashboard>.dashboard-component:nth-child(2) {
     grid-column: span 1;
   }
+}
+
+@media (min-width: 200px) and (max-width: 750px) {
+
+
+  .Navigation-container {
+    width: 100%;
+  }
+
+  .Navigation {
+    width: 95%;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+
+  .nav-logo {
+    font-size: 1.2rem;
+    width: 100%;
+  }
+
+  .profile-top {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .profile-info {
+    padding-bottom: 10px;
+  }
+
+  .profile-img {
+    display: none;
+  }
+
+  .profile-mid {
+    width: 100%;
+  }
+
+  .accounts-button span {
+    display: none;
+  }
+
+  .accounts-button svg,
+  .accounts-button {
+    padding: none;
+    margin-right: 0px;
+  }
+
+  .profile-stats {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #stat {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 0px;
+  }
+
+  .profile-name {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.8rem;
+  padding-bottom: 10px;
+
+}
+
+
 }

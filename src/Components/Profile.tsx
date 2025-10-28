@@ -49,11 +49,11 @@ function Profile() {
 
             <div className="profile-stats">
 
-                <span id="stat"> 1.2k  </span> karma
+                <span id="stat"> <div id="stat-number"> 1.2k </div> karma </span>
 
-                <span id="stat"> 500 </span> comments
+                <span id="stat"><div id="stat-number"> 500 </div> comments </span>
 
-                <span id="stat"> 12 </span> posts
+                <span id="stat"><div id="stat-number"> 12 </div> posts </span>
 
             </div>
             <button onClick={fetchRedditAccount}> Fetch reddit account data!  </button>
