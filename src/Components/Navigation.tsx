@@ -15,16 +15,23 @@ function Navigation() {
 
                 <div className="nav-buttons">
 
-                    <button className="theme-button">
-                        <FaMoon style={{ fontSize: '20px', display: 'flex', alignContent: 'center' }} />
-                    </button>
+                    <div className="nav-button">
 
-                    <button className="accounts-button">
-                        <MdAccountCircle style={{ fontSize: '25px', display: 'flex', alignContent: 'center' }} />
-                    </button>
+                        <button className="theme-button">
+                            <FaMoon style={{ display: 'flex', alignContent: 'center' }} />
+                        </button>
+
+                    </div>
+
+                    <div className="nav-button">
+
+                        <button className="accounts-button">
+                            <MdAccountCircle style={{ display: 'flex', alignContent: 'center' }} />
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 

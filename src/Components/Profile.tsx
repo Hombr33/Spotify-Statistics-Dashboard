@@ -41,7 +41,6 @@ function Profile() {
                 </div>
             </div>
             <div className="profile-mid">
-
                 <div className="user-achievements">
                     User Achievements here
                 </div>

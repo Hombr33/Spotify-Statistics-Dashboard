@@ -58,40 +58,46 @@ body {
 }
 
 .nav-buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-button {
 
   display: flex;
   justify-content: flex-end;
   flex-direction: row;
   width: fit-content;
   align-items: center;
+  padding: 5px;
   margin: 10px;
 }
 
-.nav-buttons .accounts-button {
-  margin: 10px;
-  background-color: #FF5700;
-  color: black;
+.nav-button .accounts-button {
+  color: #FF5700;
   justify-content: center;
   align-items: center;
-  height: 40px;
-  padding: 10px;
-
+  height: fit-content;
+  background-color: transparent;
+  font-size: 35px;
 }
 
-.nav-buttons .theme-button {
+.nav-button .theme-button {
 
-  margin: 10px;
   color: #FF5700;
   background-color: transparent;
   justify-content: center;
   align-items: center;
-  height: 40px;
-  width: 100px;
-  padding: 10px;
+  font-size: 25px;
+}
+
+.nav-button:hover {
+  background-color: #3f3c3c;
+  border-radius: 100px;
 }
 
 .nav-logo svg {
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 .App {
@@ -385,7 +391,7 @@ body {
   }
 
   .profile-mid {
-    width: 100%;
+    width: 80%;
   }
 
   .accounts-button span {
@@ -411,12 +417,13 @@ body {
   }
 
   .profile-name {
-  display: flex;
-  flex-direction: row;
-  font-size: 1.8rem;
-  padding-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    font-size: 1.8rem;
+    padding-bottom: 10px;
 
-}
+  }
 
+  
 
 }
