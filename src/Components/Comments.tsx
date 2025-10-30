@@ -18,7 +18,7 @@ function Comments() {
     return (
         <section className="Comments-widget">
 
-            <span> Dashboard Component 3 (best/worst performing comments) </span>
+            <span className="component-title"> Dashboard Component 3 (best/worst performing comments) </span>
             <button onClick={fetchRedditComments}> Fetch Comments </button>
 
             <ul>

@@ -9,18 +9,16 @@ function Navigation() {
             <div className="Navigation">
 
                 <div className="nav-logo">
-                    <BsReddit style={{ fontSize: '30px', display: 'flex', alignContent: 'center', color: '#FF5700' }} />
+                    <BsReddit style={{ fontSize: '30px', display: 'flex', alignContent: 'center', color: '#c24303' }} />
                     Reddit Dashboard
                 </div>
 
                 <div className="nav-buttons">
-
                     <div className="nav-button">
-
                         <button className="theme-button">
                             <FaMoon style={{ display: 'flex', alignContent: 'center' }} />
                         </button>
-
+                        
                     </div>
 
                     <div className="nav-button">

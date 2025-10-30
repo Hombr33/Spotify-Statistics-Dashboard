@@ -1,0 +1,28 @@
+
+.post{
+    display:flex;
+    flex-direction: column;
+    height:100%;
+    width: 100%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    background-color: rgb(28, 27, 29);
+}
+
+.best-performing-post{
+
+    display: flex;
+    flex-direction: column;
+    height: 80px;
+    border-radius: 20px;
+}
+
+.worst-performing-post{
+
+    display: flex;
+    flex-direction: column;
+    height: 80px;
+    border-radius: 8px;
+}

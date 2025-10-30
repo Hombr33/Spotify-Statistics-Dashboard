@@ -2,7 +2,7 @@ import express from "express";
 import fetch from "node-fetch";
 
 const username = "GapFiesty";
-const url = `https://www.reddit.com/user/${username}/api/about.json`;
+const url = `https://www.reddit.com/user/${username}/about.json`;
 
 const router = express.Router();
 
