@@ -13,18 +13,16 @@ function Communities() {
 
     return (
         <section className="Communities-widget">
-            <span className="component-title"> Top 5 active communities 💪</span>
+            <span className="component-title"> Top 5 active communities 🔥 </span>
             <BarChart
                 h={200}
                 data={data}
                 dataKey="community"
                 orientation="vertical"
-                yAxisProps={{ width: 120 }}
+                yAxisProps={{ width: 100 }}
                 barProps={{ radius: 10 }}
                 series={[{  name: 'Comments', color: 'orange.7' }]}
-                
             />
-
         </section>
     )
 }

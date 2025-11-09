@@ -10,7 +10,7 @@ const router = express.Router();
 router.get("/fetchComments", async (req, res) => {
     try {
         const response = await fetch(url, {
-            headers: { "User-Agent": "reddit-dashboard-app/0.1 by GapFiesty" },
+            headers: { "User-Agent": "reddit-dashboard-app/0.1 by GapFeisty" },
         });
 
         const data = await response.json();

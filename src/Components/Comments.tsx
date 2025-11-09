@@ -26,7 +26,6 @@ function Comments() {
                 <li>Finish accounts endpoint</li>
                 <li>create endpoint for communities</li>
                 <li>display data - charts lib </li>
-
             </ul>
 
         </section>

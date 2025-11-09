@@ -4,7 +4,7 @@ function Posts() {
 
     return (
         <section className="Posts-widget">
-            <span> Dashboard Component 2 (best/worst performing post) </span>
+            <span> best/worst performing posts  </span>
 
             <div className="post">
                 <div className="best-performing-post">
