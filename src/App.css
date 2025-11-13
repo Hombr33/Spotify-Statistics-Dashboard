@@ -2,7 +2,7 @@
 
 #root {
   width: 100%;
-  height: fit-content;
+  min-height: 100%;
   margin: 0 auto;
   background-color: var(--background);
 }
@@ -20,24 +20,23 @@ body {
   --background: #0A0A0A;
   --background-secondary: #141414;
   --text-color: whitesmoke;
-  --main-highlight: #f76707;
+  --main-highlight: #1DB954;
 }
 
 [data-mantine-color-scheme="light"] {
   --background: #e7dbd1;
   --background-secondary: #fcf5ef;
   --text-color: #111;
-  --main-highlight: #f76707;
+  --main-highlight: #1DB954;
 }
 
 .App {
   display: flex;
   flex-direction: column;
-  height: 100%;
   width: 100%;
+  height: 100vh;
   font-family: 'Figtree', sans-serif;
   color: whitesmoke;
-  margin-top: 60vh;
 }
 
 .Navigation-container {
@@ -117,16 +116,6 @@ body {
   margin-right: 20px;
 }
 
-.App {
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: fit-content;
-  width: 100%;
-  min-height: fit-content;
-}
 
 .Main {
   display: flex;
@@ -136,6 +125,19 @@ body {
   min-height: fit-content;
   margin: 0 auto;
   margin-top: 100px;
+}
+
+.Signup,
+.Login {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  width: 100%;
+  min-height: 80vh;
+  margin: 0 auto;
+  margin-top: 100px;
+  align-items: center;
+  justify-content: center;
 }
 
 .Dashboard {
@@ -361,6 +363,81 @@ body {
   margin-right: 10px;
   font-size: 25px;
   color: var(--main-highlight);
+}
+
+.login-backing {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  width: 30%;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0 auto;
+  padding: 20px;
+  background: #111111;
+  border-radius: 15px;
+}
+
+.signup-title {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  height: fit-content;
+  font-size: 1.5rem;
+}
+
+.signup-desc {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  font-size: 1.0rem;
+  text-align: center;
+}
+
+#username,
+#password,
+#idk {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.signup-title svg {
+  display: flex;
+  margin-right: 10px;
+}
+
+#Signup-button,
+#Login-button {
+  display: flex;
+  width: 180px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.0rem;
+}
+
+.login-footer a {
+  padding-left: 10px;
+}
+
+.login-footer a:hover {
+
+  text-decoration: underline;
+}
+
+.login-footer {
+
+  display: flex;
+  font-size: 1.0rem;
+  color: #a1a1a1;
+  width: 100%;
 }
 
 

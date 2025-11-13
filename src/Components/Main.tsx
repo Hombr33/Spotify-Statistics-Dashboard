@@ -8,9 +8,7 @@ function Main() {
 
     return (
         <div className="Main">
-
             <Profile />
-
             <div className="Dashboard">
 
                 <div className="dashboard-component">

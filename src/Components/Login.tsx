@@ -3,10 +3,10 @@ import { PasswordInput, TextInput } from '@mantine/core';
 import { BsArrowRight, BsBarChartSteps } from 'react-icons/bs';
 import { Button } from '@mantine/core';
 
-function Signup() {
+function Login() {
 
     return (
-        <section className="Signup">
+        <section className="Login">
 
             <div className="login-backing">
 
@@ -16,7 +16,7 @@ function Signup() {
                 </div>
 
                 <div className="signup-desc">
-                    Signup to AudioStats to connect with spotify and get insights into your listening history.
+                    Login to your account here
                 </div>
 
                 <TextInput
@@ -47,6 +47,7 @@ function Signup() {
                     styles={{ input: { marginBottom: '10px' } }}
                 />
 
+
                 <div className="signup-button">
                     <Button
                         id="Signup-button"
@@ -66,4 +67,4 @@ function Signup() {
     )
 }
 
-export default Signup;
+export default Login;

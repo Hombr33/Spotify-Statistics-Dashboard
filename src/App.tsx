@@ -10,6 +10,11 @@ import { useState, useEffect } from 'react';
 import '@mantine/core/styles.css';
 import '@mantine/charts/styles.css';
 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import Signup from './Components/Signup.tsx'
+import Login from './Components/Login.tsx'
+
 function App() {
 
   // no localstorage  for setLightOn yet. fix that
@@ -41,13 +46,19 @@ function App() {
   }), ([isLightOn, setLightOn]);
 
   return (
+
     <MantineProvider>
       <div className="App" data-mantine-color-scheme={isLightOn ? 'light' : 'dark'}>
-        <Navigation handleThemeButton={handleThemeButton} isLightOn={isLightOn} />
-        <Main />
-        <Footer />
-        <Analytics />
-
+        <Router>
+          <Navigation handleThemeButton={handleThemeButton} isLightOn={isLightOn} />
+          <Routes>
+            <Route path="/" element={<Signup />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/Dashboard" element={<Main />} />
+          </Routes>
+          <Footer />
+          <Analytics />
+        </Router>
       </div>
     </MantineProvider>
   )
