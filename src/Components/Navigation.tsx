@@ -1,10 +1,8 @@
 import { BsBarChartSteps } from "react-icons/bs";
 
 import { Switch } from '@mantine/core';
-import { MdAccountCircle, MdDashboard } from "react-icons/md";
-import { ChartLegend } from "@mantine/charts";
+import { MdAccountCircle } from "react-icons/md";
 import { BiChart } from "react-icons/bi";
-
 
 interface NavigationProps {
 
@@ -12,7 +10,7 @@ interface NavigationProps {
     isLightOn?: boolean;
 }
 
-function Navigation({ handleThemeButton, isLightOn }: NavigationProps) {
+function Navigation({ handleThemeButton }: NavigationProps) {
 
     return (
         <div className="Navigation-container">
