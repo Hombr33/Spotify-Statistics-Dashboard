@@ -1,18 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Quicksand:wght@300..700&display=swap');
 
+
 #root {
   width: 100%;
-  min-height: 100%;
+  min-height: fit-content;
+  height: auto;
   margin: 0 auto;
   background-color: var(--background);
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  scroll-behavior: smooth;
+
 }
 
 html,
 body {
-  height: 100%;
   width: 100%;
+  height: fit-content;
   margin: 0 auto;
-  overflow-x: hidden;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  font-family: 'Figtree', sans-serif;
+  color: whitesmoke;
+  height: auto;       /* grows naturally */
+  overflow: visible;  /* don’t scroll here */
 }
 
 [data-mantine-color-scheme="dark"] {
@@ -28,15 +45,6 @@ body {
   --background-secondary: #fcf5ef;
   --text-color: #111;
   --main-highlight: #1DB954;
-}
-
-.App {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100vh;
-  font-family: 'Figtree', sans-serif;
-  color: whitesmoke;
 }
 
 .Navigation-container {
@@ -122,9 +130,11 @@ body {
   flex-direction: column;
   height: fit-content;
   width: 100%;
-  min-height: fit-content;
+  height: auto;
+  align-items: flex-start;
+  justify-content: flex-start;
   margin: 0 auto;
-  margin-top: 100px;
+  padding-top: 80px;
 }
 
 .Signup,
@@ -140,11 +150,20 @@ body {
   justify-content: center;
 }
 
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+
 .Dashboard {
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   justify-content: center;
   align-items: center;
@@ -154,7 +173,7 @@ body {
 
 .dashboard-component {
   background-color: var(--background-secondary);
-  height: 280px;
+  height: fit-content;
   margin: 10px;
   border-radius: 8px;
   padding: 10px;
@@ -175,6 +194,12 @@ body {
   width: 100%;
 }
 
+
+.Dashboard>.dashboard-component:nth-child(0) {
+  display: flex;
+  width: 100%;
+
+}
 
 .Dashboard>.dashboard-component:nth-child(1) {
   grid-column: span 1;
@@ -259,6 +284,8 @@ body {
   justify-content: flex-start;
   border-radius: 12px;
   padding-left: 20px;
+
+  margin-top: 20px;
 }
 
 .profile-top {
@@ -472,7 +499,6 @@ body {
 
   .App {
     height: fit-content;
-    margin-top: 133vh;
   }
 
   .Navigation-container {
@@ -513,6 +539,8 @@ body {
   .profile-mid {
     width: 80%;
   }
+
+
 
   .accounts-button span {
     display: none;

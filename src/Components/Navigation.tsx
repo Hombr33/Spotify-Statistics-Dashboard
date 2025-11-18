@@ -2,10 +2,9 @@ import { BsBarChartSteps } from "react-icons/bs";
 
 import { Switch } from '@mantine/core';
 import { MdAccountCircle } from "react-icons/md";
-import { BiChart } from "react-icons/bi";
+import { FaChartSimple } from "react-icons/fa6";
 
 interface NavigationProps {
-
     handleThemeButton: React.MouseEventHandler<HTMLInputElement>
     isLightOn?: boolean;
 }
@@ -15,7 +14,6 @@ function Navigation({ handleThemeButton }: NavigationProps) {
     return (
         <div className="Navigation-container">
             <div className="Navigation">
-
                 <div className="nav-logo">
                     <BsBarChartSteps style={{ fontSize: '25px', display: 'flex', alignContent: 'center', color: '#1DB954' }} />
                     AudioStats - Charts for Spotify
@@ -36,7 +34,7 @@ function Navigation({ handleThemeButton }: NavigationProps) {
 
                         <button className="accounts-button">
                             <a href="/dashboard">
-                                <BiChart style={{ display: 'flex', alignContent: 'center' }} />
+                                <FaChartSimple style={{ display: 'flex', alignContent: 'center' }} />
                             </a>
                         </button>
 

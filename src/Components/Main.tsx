@@ -1,7 +1,8 @@
 import Profile from './Profile.tsx';
-import Posts from './Posts.tsx';
-import Comments from './Comments.tsx';
-import Communities from './Communities.tsx';
+import TopGenres from './TopGenres.tsx';
+import Comments from './RecentlyListened.tsx';
+import Artists from './Artists.tsx';
+import TopSongs from './TopSongs.tsx'
 
 
 function Main() {
@@ -9,40 +10,50 @@ function Main() {
     return (
         <div className="Main">
             <Profile />
-            <div className="Dashboard">
+
+            <div className="dashboard-container">
 
                 <div className="dashboard-component">
-                    <div className="component1">
-                        <Posts />
+                    <div className="component0">
+                        <TopSongs />
                     </div>
                 </div>
 
-                <div className="dashboard-component">
-                    <div className="component2">
-                        <Communities />
+                <div className="Dashboard">
 
-                    </div>
-                </div>
-
-                <div className="dashboard-component">
-                    <div className="component3">
-                        <Comments />
+                    <div className="dashboard-component">
+                        <div className="component1">
+                            <TopGenres />
+                        </div>
                     </div>
 
-                </div>
+                    <div className="dashboard-component">
+                        <div className="component2">
+                            <Artists/>
 
-                <div className="dashboard-component">
-                    <div className="component3">
-                        <span> Dashboard Component 4</span>
+                        </div>
                     </div>
 
-                </div>
+                    <div className="dashboard-component">
+                        <div className="component3">
+                            <Comments />
+                        </div>
 
-                <div className="dashboard-component">
-                    <div className="component5">
-                        <span> Dashboard Component 5</span>
                     </div>
 
+                    <div className="dashboard-component">
+                        <div className="component3">
+                            <span> Dashboard Component 4</span>
+                        </div>
+
+                    </div>
+
+                    <div className="dashboard-component">
+                        <div className="component5">
+                            <span> Dashboard Component 5</span>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>

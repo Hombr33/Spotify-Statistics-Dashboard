@@ -47,14 +47,14 @@ function App() {
 
   return (
 
-    <MantineProvider>
-      <div className="App" data-mantine-color-scheme={isLightOn ? 'light' : 'dark'}>
+    <MantineProvider data-mantine-color-scheme={isLightOn ? 'light' : 'dark'}>
+      <div className="App">
         <Router>
           <Navigation handleThemeButton={handleThemeButton} isLightOn={isLightOn} />
           <Routes>
             <Route path="/" element={<Signup />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/Dashboard" element={<Main />} />
+            <Route path="/dashboard" element={<Main />} />
           </Routes>
           <Footer />
           <Analytics />

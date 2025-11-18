@@ -1,7 +1,6 @@
 import { BiCalendar } from "react-icons/bi";
 import { PiConfetti } from "react-icons/pi";
 
-import Trophies from './Trophies.tsx';
 import { useState } from 'react';
 
 interface UserProfile {
@@ -52,11 +51,6 @@ function Profile() {
 
                 <div className="profile-img">
                     <img src={user?.data.snoovatar_img} />
-                </div>
-            </div>
-            <div className="profile-mid">
-                <div className="user-achievements">
-                    <Trophies />
                 </div>
             </div>
 
