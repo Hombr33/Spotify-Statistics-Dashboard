@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import pkg from "./connect.cjs";
-import fetchCommentsRoute from "./routes/fetchComments.js"
+import fetchTopArtistsRoute from "./routes/fetchTopArtists.js"
 import fetchAccountsRoute from "./routes/fetchAccount.js"
 
 const { connectMongo } = pkg;
@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 })
 
 app.use("/api", fetchAccountsRoute);
-app.use("/api", fetchCommentsRoute);
+app.use("/api", fetchTopArtistsRoute);
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
