@@ -6,12 +6,13 @@ import { useState } from 'react';
 interface UserProfile {
     data: {
 
+        user: string;
     }
 }
 
 function Profile() {
 
-    const [user, setUser] = useState<UserProfile | null>(null);
+    const [, setUser] = useState<UserProfile | null>(null);
 
     const fetchSpotifyAccount = async () => {
 
@@ -22,11 +23,12 @@ function Profile() {
 
             const json = await response.json();
 
-            setUser(json);
+            setUser(json.user);
             console.log(json);
 
         } catch (e) {
             console.log(e);
+            
         }
     }
 
@@ -36,7 +38,7 @@ function Profile() {
 
                 <div className="profile-info">
                     <div className="profile-name">
-                        Welcome, 
+                        Welcome 
                     </div>
                     <div className="user-desc">
                         <span>   </span>

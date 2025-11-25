@@ -2,7 +2,7 @@
 import { PasswordInput, TextInput } from '@mantine/core';
 import { BsArrowRight, BsBarChartSteps } from 'react-icons/bs';
 import { Button } from '@mantine/core';
-import { useState } from 'react';
+//import { useState } from 'react';
 
 
 // move all this to signup - 
@@ -10,12 +10,12 @@ import { useState } from 'react';
 
 function Login() {
 
-    interface UserProfile {
+    // interface UserProfile {
 
-        user: string;
-    }
+    //     user: string;
+    // }
 
-    const [user, setUser] = useState<UserProfile | null>(null);
+    //const [user, setUser] = useState<UserProfile | null>(null);
 
     const login = () => {
         window.location.href = "http://localhost:3000/login";
