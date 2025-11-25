@@ -2,8 +2,24 @@
 import { PasswordInput, TextInput } from '@mantine/core';
 import { BsArrowRight, BsBarChartSteps } from 'react-icons/bs';
 import { Button } from '@mantine/core';
+import { useState } from 'react';
+
+
+// move all this to signup - 
+// this will redirect the user to the spotify login page 
 
 function Login() {
+
+    interface UserProfile {
+
+        user: string;
+    }
+
+    const [user, setUser] = useState<UserProfile | null>(null);
+
+    const login = () => {
+        window.location.href = "http://localhost:3000/login";
+    }
 
     return (
         <section className="Login">
@@ -38,18 +54,9 @@ function Login() {
                     styles={{ input: { marginBottom: '10px' } }}
                 />
 
-                <TextInput
-                    id="idk"
-                    variant="filled"
-                    description="Username or Email"
-                    placeholder="Username or Email"
-                    w="100%"
-                    styles={{ input: { marginBottom: '10px' } }}
-                />
-
-
                 <div className="signup-button">
                     <Button
+                        onClick={login}
                         id="Signup-button"
                         rightSection={<BsArrowRight />}
                         color="green"
@@ -59,7 +66,7 @@ function Login() {
                 </div>
 
                 <div className="login-footer">
-                    Already signed up? <a href="/login"> Login here </a>
+                    Don't have an account? Sign up <a href="/">here</a>
                 </div>
 
             </div>

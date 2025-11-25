@@ -5,11 +5,7 @@ import { useState } from 'react';
 
 interface UserProfile {
     data: {
-        name: string;
-        total_karma: number;
-        icon_img: string;
-        snoovatar_img: string;
-        created_utc: number;
+
     }
 }
 
@@ -17,10 +13,13 @@ function Profile() {
 
     const [user, setUser] = useState<UserProfile | null>(null);
 
-    const fetchRedditAccount = async () => {
+    const fetchSpotifyAccount = async () => {
 
         try {
-            const response = await fetch('api/fetchAccounts');
+            const response = await fetch('/api/fetchAccounts', {
+                method: "POST",
+            });
+
             const json = await response.json();
 
             setUser(json);
@@ -37,33 +36,32 @@ function Profile() {
 
                 <div className="profile-info">
                     <div className="profile-name">
-                        Welcome, {user?.data?.name}
+                        Welcome, 
                     </div>
                     <div className="user-desc">
                         <span>   </span>
                     </div>
 
                     <div className="user-small-stats">
-                        <span><BiCalendar />Account created: {user?.data.created_utc} </span>
-                        <span><PiConfetti />Cake day: {user?.data.created_utc} </span>
+                        <span><BiCalendar />Account created:  </span>
+                        <span><PiConfetti />Cake day:  </span>
                     </div>
                 </div>
 
                 <div className="profile-img">
-                    <img src={user?.data.snoovatar_img} />
                 </div>
             </div>
 
             <div className="profile-stats">
 
-                <span id="stat"> <div id="stat-number"> {user?.data?.total_karma} </div> karma </span>
+                <span id="stat"> <div id="stat-number"> </div> karma </span>
 
                 <span id="stat"><div id="stat-number"> 500 </div> comments </span>
 
                 <span id="stat"><div id="stat-number"> 12 </div> posts </span>
 
             </div>
-            <button onClick={fetchRedditAccount}> Fetch reddit account data!  </button>
+            <button onClick={fetchSpotifyAccount}> Fetch reddit account data!  </button>
         </section>
     )
 }

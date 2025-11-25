@@ -7,7 +7,12 @@ const url = `https://www.reddit.com/user/${username}/comments.json`;
 
 const router = express.Router();
 
-router.get("/fetch", async (req, res) => {
+// Fetch Top Artists Route - Currently part of reddit API for testing but once Oauth is in, this'll be changed 
+// to the Spotify API to fetch user's top artists. 
+
+// this goes for all other routes.
+
+router.get("/fetchTopArtists", async (req, res) => {
     try {
         const response = await fetch(url, {
             headers: { "User-Agent": "reddit-dashboard-app/0.1 by GapFeisty" },

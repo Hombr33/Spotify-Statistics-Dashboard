@@ -15,7 +15,7 @@ function RecentlyListened() {
     const fetchRedditComments = async () => {
 
         try {
-            const response = await fetch('/api/fetchComments');
+            const response = await fetch('/api/fetchTopArtists'); 
             const json = await response.json();
 
             const comments = json.data.children.map((child: { data: any; }) => child.data);

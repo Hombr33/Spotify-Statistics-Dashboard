@@ -11,7 +11,7 @@ function Signup() {
             <div className="login-backing">
 
                 <div className="signup-title">
-                    <BsBarChartSteps style={{ fontSize: '25px', alignContent: 'center', color: '#1DB954' }} />
+                    <BsBarChartSteps style={{ fontSize: '20px', alignContent: 'center', color: '#1DB954' }} />
                     AudioStats - Charts for Spotify
                 </div>
 
@@ -55,6 +55,10 @@ function Signup() {
                     >
                         Sign up
                     </Button>
+                </div>
+
+                <div className="signup-blurb">
+                    Once you have signed up, you will be redirected to spotify in order to authorise AudioStats.
                 </div>
 
                 <div className="login-footer">
