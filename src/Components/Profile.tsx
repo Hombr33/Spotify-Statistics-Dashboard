@@ -1,5 +1,3 @@
-import { BiCalendar } from "react-icons/bi";
-import { PiConfetti } from "react-icons/pi";
 
 import { useState } from 'react';
 
@@ -45,8 +43,6 @@ function Profile() {
                     </div>
 
                     <div className="user-small-stats">
-                        <span><BiCalendar />Account created:  </span>
-                        <span><PiConfetti />Cake day:  </span>
                     </div>
                 </div>
 
@@ -63,7 +59,7 @@ function Profile() {
                 <span id="stat"><div id="stat-number"> 12 </div> posts </span>
 
             </div>
-            <button onClick={fetchSpotifyAccount}> Fetch reddit account data!  </button>
+            <button onClick={fetchSpotifyAccount}> Fetch Spotify account data!  </button>
         </section>
     )
 }

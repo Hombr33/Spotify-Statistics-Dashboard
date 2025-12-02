@@ -1,8 +1,7 @@
-import { BsBarChartSteps } from "react-icons/bs";
-
 import { Switch } from '@mantine/core';
 import { MdAccountCircle } from "react-icons/md";
 import { FaChartSimple } from "react-icons/fa6";
+import { FaHeadphonesSimple } from "react-icons/fa6";
 
 interface NavigationProps {
     handleThemeButton: React.MouseEventHandler<HTMLInputElement>
@@ -15,8 +14,8 @@ function Navigation({ handleThemeButton }: NavigationProps) {
         <div className="Navigation-container">
             <div className="Navigation">
                 <div className="nav-logo">
-                    <BsBarChartSteps style={{ fontSize: '25px', display: 'flex', alignContent: 'center', color: '#1DB954' }} />
-                    AudioStats - Charts for Spotify
+                    <FaHeadphonesSimple style={{ fontSize: '25px', display: 'flex', alignContent: 'center', color: '#1DB954' }} />
+                    AudioStats <span id="nav-title-more"> - Charts for Spotify </span>
                 </div>
 
                 <div className="nav-buttons">
@@ -33,10 +32,10 @@ function Navigation({ handleThemeButton }: NavigationProps) {
                     <div className="nav-button">
 
                         <button className="accounts-button">
-                            <a href="/dashboard">
-                                <FaChartSimple style={{ display: 'flex', alignContent: 'center' }} />
-                            </a>
-                        </button>
+                                <a href="/dashboard">
+                                    <FaChartSimple style={{ display: 'flex', alignContent: 'center' }} />
+                                </a>
+                            </button>
 
                         <button className="accounts-button">
                             <a href="/">
@@ -46,7 +45,7 @@ function Navigation({ handleThemeButton }: NavigationProps) {
                     </div>
                 </div>
             </div>
-        </div >
+        </div>
     )
 }
 

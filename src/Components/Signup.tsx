@@ -1,17 +1,26 @@
 
 import { PasswordInput, TextInput } from '@mantine/core';
-import { BsArrowRight, BsBarChartSteps } from 'react-icons/bs';
+import { BsArrowRight } from 'react-icons/bs';
 import { Button } from '@mantine/core';
+import { FaHeadphonesSimple } from "react-icons/fa6";
+import { IoWarning } from 'react-icons/io5';
 
 function Signup() {
 
     return (
         <section className="Signup">
 
-            <div className="login-backing">
+
+
+            <a className="early-dev-banner" href="/dashboard">
+                <IoWarning style={{ alignContent: 'center', color: '#1DB954' }} />
+                <span> App is currently in early stage development. To view the main dashboardUI click here. </span>
+            </a>
+
+            <div className="signup-backing">
 
                 <div className="signup-title">
-                    <BsBarChartSteps style={{ fontSize: '20px', alignContent: 'center', color: '#1DB954' }} />
+                    <FaHeadphonesSimple style={{ fontSize: '20px', alignContent: 'center', color: '#1DB954' }} />
                     AudioStats - Charts for Spotify
                 </div>
 

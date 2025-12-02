@@ -12,8 +12,7 @@ function Footer() {
             <div className="footer-item">
                 <span> Daniel Steele ©2025  </span>
             </div>
-
-
+            
             <Tippy
                 content={"View my Stuff :)"}
                 interactive={true}

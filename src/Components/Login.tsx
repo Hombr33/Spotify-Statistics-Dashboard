@@ -1,9 +1,11 @@
 
 import { PasswordInput, TextInput } from '@mantine/core';
-import { BsArrowRight, BsBarChartSteps } from 'react-icons/bs';
+import { BsArrowRight } from 'react-icons/bs';
 import { Button } from '@mantine/core';
-//import { useState } from 'react';
+import { FaHeadphonesSimple } from "react-icons/fa6";
+import { IoWarning } from 'react-icons/io5';
 
+//import { useState } from 'react';
 
 // move all this to signup - 
 // this will redirect the user to the spotify login page 
@@ -27,7 +29,7 @@ function Login() {
             <div className="login-backing">
 
                 <div className="signup-title">
-                    <BsBarChartSteps style={{ fontSize: '25px', alignContent: 'center', color: '#1DB954' }} />
+                    <FaHeadphonesSimple style={{ fontSize: '25px', alignContent: 'center', color: '#1DB954' }} />
                     AudioStats - Charts for Spotify
                 </div>
 
