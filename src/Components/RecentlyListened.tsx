@@ -1,10 +1,14 @@
 import { useState } from "react";
+import Song from './Song.tsx';
+import { Button } from '@mantine/core';
 
 interface Comments {
 
-    comments: {
-        link_title: string;
-        body: string;
+    data: {
+        comments: {
+            link_title: string;
+            body: string;
+        }
     }
 }
 
@@ -15,7 +19,7 @@ function RecentlyListened() {
     const fetchRedditComments = async () => {
 
         try {
-            const response = await fetch('/api/fetchTopArtists'); 
+            const response = await fetch('/api/fetchTopArtists');
             const json = await response.json();
 
             const comments = json.data.children.map((child: { data: any; }) => child.data);
@@ -28,21 +32,28 @@ function RecentlyListened() {
     }
 
     return (
-        <section className="Comments-widget">
 
-            <span className="component-title"> </span>
-            <button onClick={fetchRedditComments}> Fetch Comments </button>
+        <section className="recent-widget">
+
+            <span> Recently Listened Songs </span>
+
+            <Button
+                color="green.7"
+                w="200"
+                style={{
+                    margin: '10px'
+                }}
+
+                onClick={fetchRedditComments}> Fetch Comments </Button>
 
 
-            // future mapping for each recently listened song.
+            <div className="recent-grid">
+                {comments?.map((comment: any, index: number) => (
+                    <Song key={index} comment={comment} index={index} />
+                ))}
 
-            {comments?.map((comment: any, index: number) => (
+            </div>
 
-                <span key={index}>
-                    <span className="song_name"> {comment.link_title}</span>
-                    <span id="song_art"> {comment.body}</span>
-                </span>
-            ))}
 
         </section>
     )

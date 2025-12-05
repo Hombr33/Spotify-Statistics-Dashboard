@@ -3,6 +3,9 @@ import { MdAccountCircle } from "react-icons/md";
 import { FaChartSimple } from "react-icons/fa6";
 import { FaHeadphonesSimple } from "react-icons/fa6";
 
+import { Button } from '@mantine/core';
+import { BsStarFill } from 'react-icons/bs';
+
 interface NavigationProps {
     handleThemeButton: React.MouseEventHandler<HTMLInputElement>
     isLightOn?: boolean;
@@ -32,20 +35,33 @@ function Navigation({ handleThemeButton }: NavigationProps) {
                     <div className="nav-button">
 
                         <button className="accounts-button">
-                                <a href="/dashboard">
-                                    <FaChartSimple style={{ display: 'flex', alignContent: 'center' }} />
-                                </a>
-                            </button>
+                            <a href="/dashboard">
+                                <FaChartSimple style={{ display: 'flex', alignContent: 'center' }} />
+                            </a>
+                        </button>
 
                         <button className="accounts-button">
                             <a href="/">
                                 <MdAccountCircle style={{ display: 'flex', alignContent: 'center' }} />
                             </a>
                         </button>
+
+                        <a href="https://github.com/DanielSteele1/Spotify-Statistics-Dashboard">
+
+                            <Button
+                                color="green.7"
+                                className="github-star-button"
+                            >
+                                <BsStarFill style={{ margin: '10px', alignContent: 'center' }} />
+                                Star this Project?
+                            </Button>
+                        </a>
+
+
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 

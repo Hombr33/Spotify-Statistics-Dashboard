@@ -62,7 +62,7 @@ function Login() {
                         rightSection={<BsArrowRight />}
                         color="green"
                     >
-                        Sign up
+                        Login
                     </Button>
                 </div>
 

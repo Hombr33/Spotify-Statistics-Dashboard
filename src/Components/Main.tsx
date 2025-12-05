@@ -1,9 +1,9 @@
 import Profile from './Profile.tsx';
 import TopGenres from './TopGenres.tsx';
-import Comments from './RecentlyListened.tsx';
 import Artists from './Artists.tsx';
 import TopSongs from './TopSongs.tsx'
-
+import MonthlyActivity from './MonthlyActivity.tsx';
+import RecentlyListened from './RecentlyListened.tsx';
 
 function Main() {
 
@@ -19,6 +19,12 @@ function Main() {
                     </div>
                 </div>
 
+                <div className="dashboard-component">
+                    <div className="component3">
+                        <MonthlyActivity/>
+                    </div>
+                </div>
+
                 <div className="Dashboard">
 
                     <div className="dashboard-component">
@@ -29,31 +35,18 @@ function Main() {
 
                     <div className="dashboard-component">
                         <div className="component2">
-                            <Artists/>
+                            <Artists />
 
                         </div>
                     </div>
 
                     <div className="dashboard-component">
                         <div className="component3">
-                            <Comments />
+                            <RecentlyListened />
                         </div>
 
                     </div>
 
-                    <div className="dashboard-component">
-                        <div className="component3">
-                            <span> Dashboard Component 4</span>
-                        </div>
-
-                    </div>
-
-                    <div className="dashboard-component">
-                        <div className="component5">
-                            <span> Dashboard Component 5</span>
-                        </div>
-
-                    </div>
                 </div>
             </div>
         </div>
