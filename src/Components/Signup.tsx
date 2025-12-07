@@ -44,15 +44,6 @@ function Signup() {
                     styles={{ input: { marginBottom: '10px' } }}
                 />
 
-                <TextInput
-                    id="idk"
-                    variant="filled"
-                    description="Username or Email"
-                    placeholder="Username or Email"
-                    w="100%"
-                    styles={{ input: { marginBottom: '10px' } }}
-                />
-
                 <div className="signup-button">
                     <Button
                         id="Signup-button"
