@@ -363,7 +363,7 @@ body {
   display: flex;
   font-size: 1.5rem;
   width: fit-content;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .user-desc {
@@ -401,11 +401,9 @@ body {
 #stat {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
   align-items: center;
-  width: 100%;
-  padding-right: 10px;
-  padding-bottom: 5px;
+  padding: px;
+  padding-left: 0px;
   color: var(--text-color);
 }
 
@@ -534,7 +532,6 @@ body {
   flex-direction: column;
   height: fit-content;
   width: 100%;
-  padding: 10px;
 }
 
 .song {
@@ -551,8 +548,6 @@ body {
   justify-content: flex-start;
   width: 100px;
   height: 100px;
-  padding: 10px;
-  background-color: var(--main-highlight);
   border-radius: 8px;
   font-size: 1.0rem;
 }
@@ -560,6 +555,7 @@ body {
 .song_art img{
   width: 100%;
   height: 100%;
+  border-radius: 8px;
 }
 
 .song_info {
@@ -568,7 +564,7 @@ body {
   flex-direction: column;
   width: 100%;
   padding: 10px;
-  margin: 10px;
+  margin-left: 10px;
   background-color: var(--background);
   border-radius: 8px;
 }

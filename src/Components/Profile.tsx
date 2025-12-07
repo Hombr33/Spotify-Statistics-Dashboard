@@ -26,7 +26,7 @@ function Profile() {
 
         } catch (e) {
             console.log(e);
-            
+
         }
     }
 
@@ -36,10 +36,11 @@ function Profile() {
 
                 <div className="profile-info">
                     <div className="profile-name">
-                        Welcome 
+                        Welcome {"User's name here"}
                     </div>
+                    
                     <div className="user-desc">
-                        <span>   </span>
+                        <span> User description  </span>
                     </div>
 
                     <div className="user-small-stats">
@@ -52,11 +53,11 @@ function Profile() {
 
             <div className="profile-stats">
 
-                <span id="stat"> <div id="stat-number"> </div> karma </span>
+                <span id="stat"><div id="stat-number"> 500 </div> Total Songs listened </span>
 
-                <span id="stat"><div id="stat-number"> 500 </div> comments </span>
+                <span id="stat"><div id="stat-number"> 10 </div> Playlists </span>
 
-                <span id="stat"><div id="stat-number"> 12 </div> posts </span>
+                <span id="stat"><div id="stat-number"> 12 </div> Followers </span>
 
             </div>
             <button onClick={fetchSpotifyAccount}> Fetch Spotify account data!  </button>

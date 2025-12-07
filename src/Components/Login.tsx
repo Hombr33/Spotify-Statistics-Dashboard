@@ -3,6 +3,7 @@ import { PasswordInput, TextInput } from '@mantine/core';
 import { BsArrowRight } from 'react-icons/bs';
 import { Button } from '@mantine/core';
 import { FaHeadphonesSimple } from "react-icons/fa6";
+import EarlyBuildWarning from './EarlyBuildWarning';
 
 //import { useState } from 'react';
 
@@ -26,6 +27,7 @@ function Login() {
         <section className="Login">
 
             <div className="login-backing">
+
 
                 <div className="signup-title">
                     <FaHeadphonesSimple style={{ fontSize: '25px', alignContent: 'center', color: '#1DB954' }} />

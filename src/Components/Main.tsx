@@ -4,11 +4,15 @@ import Artists from './Artists.tsx';
 import TopSongs from './TopSongs.tsx'
 import MonthlyActivity from './MonthlyActivity.tsx';
 import RecentlyListened from './RecentlyListened.tsx';
+import EarlyBuildWarning from './EarlyBuildWarning.tsx';
 
 function Main() {
 
     return (
         <div className="Main">
+
+            <EarlyBuildWarning />
+
             <Profile />
 
             <div className="dashboard-container">

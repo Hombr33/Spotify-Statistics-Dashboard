@@ -3,7 +3,7 @@ import { PasswordInput, TextInput } from '@mantine/core';
 import { BsArrowRight } from 'react-icons/bs';
 import { Button } from '@mantine/core';
 import { FaHeadphonesSimple } from "react-icons/fa6";
-import { IoWarning } from 'react-icons/io5';
+import EarlyBuildWarning from './EarlyBuildWarning';
 
 function Signup() {
 
@@ -11,12 +11,9 @@ function Signup() {
         <section className="Signup">
 
 
+            <EarlyBuildWarning />
 
-            <a className="early-dev-banner" href="/dashboard">
-                <IoWarning style={{ alignContent: 'center', color: '#1DB954' }} />
-                <span> App is currently in early stage development. To view the main dashboardUI click here. </span>
-            </a>
-
+        
             <div className="signup-backing">
 
                 <div className="signup-title">
