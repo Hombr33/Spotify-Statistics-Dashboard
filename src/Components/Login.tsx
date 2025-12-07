@@ -19,7 +19,7 @@ function Login() {
     //const [user, setUser] = useState<UserProfile | null>(null);
 
     const login = () => {
-        window.location.href = "https://spotify-statistics-dashboard.onrender.com/";
+        window.location.href = "https://spotify-statistics-dashboard.onrender.com/login";
     }
 
     return (
