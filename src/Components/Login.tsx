@@ -19,12 +19,11 @@ function Login() {
     //const [user, setUser] = useState<UserProfile | null>(null);
 
     const login = () => {
-        window.location.href = "http://localhost:3000/login";
+        window.location.href = "https://spotify-statistics-dashboard.onrender.com/";
     }
 
     return (
         <section className="Login">
-
             <div className="login-backing">
 
 

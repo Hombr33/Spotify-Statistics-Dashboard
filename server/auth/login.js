@@ -8,11 +8,9 @@ const redirect_uri = 'https://reddit-statistics-app.vercel.app/callback'; //redi
 const clientSecret = process.env.CLIENT_SECRET;
 const clientId = process.env.CLIENT_ID;
 
-
-router.get("/", (req, res) => {
+router.get("/login", (req, res) => {
 
   // client info
-
   var scope = 'user-read-private user-read-email';
 
   res.redirect('https://accounts.spotify.com/authorize?' +
@@ -58,7 +56,7 @@ router.get("/callback", (req, res) => {
   res.send("Spotify redirected you! Code: " + req.query.code);
 
   console.log("redirected!")
-  res.redirect("/dashboard");
+  res.redirect("https://reddit-statistics-app.vercel.app/dashboard");
 });
 
 export default router;

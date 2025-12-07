@@ -10,10 +10,8 @@ function Signup() {
     return (
         <section className="Signup">
 
-
             <EarlyBuildWarning />
 
-        
             <div className="signup-backing">
 
                 <div className="signup-title">
