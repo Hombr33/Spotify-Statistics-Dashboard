@@ -1,16 +1,18 @@
 
 import { useState } from 'react';
+import { BsPerson } from 'react-icons/bs';
 
 interface UserProfile {
     data: {
 
         user: string;
+        
     }
 }
 
 function Profile() {
 
-    const [, setUser] = useState<UserProfile | null>(null);
+    const [user,setUser] = useState<UserProfile | null>(null);
 
     const fetchSpotifyAccount = async () => {
 
@@ -23,10 +25,10 @@ function Profile() {
 
             setUser(json.user);
             console.log(json);
+            console.log(user);
 
-        } catch (e) {
-            console.log(e);
-
+        } catch (error) {
+            console.log(error);
         }
     }
 
@@ -48,6 +50,7 @@ function Profile() {
                 </div>
 
                 <div className="profile-img">
+                    <BsPerson style={{fontSize: '50px'}}/>
                 </div>
             </div>
 

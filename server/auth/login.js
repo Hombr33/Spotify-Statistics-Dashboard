@@ -1,4 +1,5 @@
 
+import fetch from 'node-fetch';
 import express from "express";
 import querystring from "querystring";
 
@@ -8,7 +9,7 @@ const redirect_uri = 'https://reddit-statistics-app.vercel.app/callback'; //redi
 const clientSecret = process.env.CLIENT_SECRET;
 const clientId = process.env.CLIENT_ID;
 
-router.get("/login", (req, res) => {
+router.get("/", (req, res) => {
 
   // client info
   var scope = 'user-read-private user-read-email';
@@ -51,12 +52,17 @@ router.get("/callback", (req, res) => {
       },
       json: true
     };
+
+    request.post(authOptions, (error, response, body) => {
+      if (error || response.statusCode !== 200) {
+        console.error("Spotify token error:", error || body);
+        return res.redirect("https://reddit-statistics-app.vercel.app/?error=token_error");
+      }
+
+      console.log("Spotify tokens:", body);
+      res.redirect("https://reddit-statistics-app.vercel.app/dashboard");
+    });
   }
-
-  res.send("Spotify redirected you! Code: " + req.query.code);
-
-  console.log("redirected!")
-  res.redirect("https://reddit-statistics-app.vercel.app/dashboard");
 });
 
 export default router;

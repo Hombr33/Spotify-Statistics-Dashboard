@@ -124,19 +124,41 @@ body {
   display: flex;
   justify-content: flex-end;
   flex-direction: row;
-  width: fit-content;
   align-items: center;
   padding: 5px;
-  margin: 10px;
+  border-radius: 8px;
+  background-color: transparent;
+
 }
 
-.nav-button .accounts-button {
+.nav-button .accounts-button a {
+  display: inline-flex;
+  flex-direction: row;
   color: var(--text-color);
   justify-content: center;
   align-items: center;
   height: fit-content;
-  background-color: transparent;
-  font-size: 30px;
+  width: fit-content;
+  font-size: 18px;
+}
+
+.nav-button .accounts-button a:hover {
+ color: #1DB954;
+}
+
+
+.nav-button .accounts-button a span {
+  padding-left: 10px;
+
+}
+
+.nav-button .accounts-button {
+  display: inline-flex;
+  flex-direction: row;
+  color: var(--text-color);
+  background-color: none;
+  font-size: 20px;
+  margin: 10px;
 }
 
 .nav-button .theme-button {
@@ -628,8 +650,7 @@ body {
   }
 }
 
-@media (min-width: 200px) and (max-width: 750px) {
-
+@media (min-width: 200px) and (max-width: 1100px) {
 
   .App {
     height: fit-content;
@@ -652,6 +673,7 @@ body {
   .Navigation {
     width: 95%;
     height: fit-content;
+    padding: 5px;
   }
 
   .nav-logo {
@@ -688,6 +710,7 @@ body {
   .accounts-button svg,
   .accounts-button {
     padding: none;
+    font-size: 1.4rem;
     margin-right: 0px;
   }
 

@@ -17,10 +17,6 @@ import Login from './Components/Login.tsx'
 
 function App() {
 
-  // no localstorage  for setLightOn yet. fix that
-  // carry on tweaking CSS THEN
-  // move onto getting real API data displayed.
-
   const [isLightOn, setLightOn] = useState(() => {
 
     const savedTheme = localStorage.getItem("theme");
@@ -47,7 +43,7 @@ function App() {
 
   return (
 
-    <MantineProvider data-mantine-color-scheme={isLightOn ? 'light' : 'dark'}>
+    <MantineProvider data-mantine-color-scheme={isLightOn ? 'dark' : 'light'}>
       <div className="App">
         <Router>
           <Navigation handleThemeButton={handleThemeButton} isLightOn={isLightOn} />

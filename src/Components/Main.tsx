@@ -12,7 +12,6 @@ function Main() {
         <div className="Main">
 
             <EarlyBuildWarning />
-
             <Profile />
 
             <div className="dashboard-container">

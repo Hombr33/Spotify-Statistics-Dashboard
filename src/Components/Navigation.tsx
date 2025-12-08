@@ -26,7 +26,7 @@ function Navigation({ handleThemeButton }: NavigationProps) {
                         <Switch
                             className="theme-button"
                             onClick={handleThemeButton}
-                            size="lg"
+                            size="md"
                             color='green.7'
                         >
                         </Switch>
@@ -34,15 +34,20 @@ function Navigation({ handleThemeButton }: NavigationProps) {
 
                     <div className="nav-button">
 
-                        <button className="accounts-button">
+                        <button 
+                        className="accounts-button">
                             <a href="/dashboard">
                                 <FaChartSimple style={{ display: 'flex', alignContent: 'center' }} />
+                                <span> Dashboard </span>
                             </a>
                         </button>
 
-                        <button className="accounts-button">
+                        <button 
+                        className="accounts-button"
+                        >
                             <a href="/">
                                 <MdAccountCircle style={{ display: 'flex', alignContent: 'center' }} />
+                                <span> Account </span>
                             </a>
                         </button>
 

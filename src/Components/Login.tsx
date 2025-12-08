@@ -12,20 +12,17 @@ import { FaHeadphonesSimple } from "react-icons/fa6";
 function Login() {
 
     // interface UserProfile {
-
     //     user: string;
     // }
-
     //const [user, setUser] = useState<UserProfile | null>(null);
 
     const login = () => {
-        window.location.href = "https://spotify-statistics-dashboard.onrender.com/login";
+        window.location.href = "https://spotify-statistics-dashboard.onrender.com/login/";
     }
 
     return (
         <section className="Login">
             <div className="login-backing">
-
 
                 <div className="signup-title">
                     <FaHeadphonesSimple style={{ fontSize: '25px', alignContent: 'center', color: '#1DB954' }} />
