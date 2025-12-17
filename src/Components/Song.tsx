@@ -15,7 +15,6 @@ function Song({ comment, index }: SongProps): JSX.Element {
     const permaLink = comment.link_permalink ?? "Link not found";
 
     return (
-
         <section className="song" key={index}>
 
             <span className="song_art"> <img src={art} /> </span>

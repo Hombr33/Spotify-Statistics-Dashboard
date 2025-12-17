@@ -61,12 +61,10 @@ function Navigation({ handleThemeButton }: NavigationProps) {
                                 Star this Project?
                             </Button>
                         </a>
-
-
                     </div>
                 </div>
             </div>
-        </div >
+        </div>
     )
 }
 

@@ -23,7 +23,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: auto;
+  height: 100dvh;
   font-family: 'Figtree', sans-serif;
   color: whitesmoke;
   height: auto;
@@ -47,8 +47,9 @@ body {
 
 .early-dev-banner {
   display: inline-flex;
-  width: fit-content;
+  width: 30%;
   height: fit-content;
+  text-align: center;
   padding: 10px;
   margin: 0 auto;
   background-color: var(--background-secondary);
@@ -61,7 +62,7 @@ body {
 
 .early-dev-banner svg {
   margin-right: 40px;
-  font-size: 1.2rem;
+  font-size: 2.0rem;
 }
 
 .early-dev-banner a {
@@ -125,6 +126,7 @@ body {
   justify-content: flex-end;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   padding: 5px;
   border-radius: 8px;
   background-color: transparent;
@@ -143,7 +145,7 @@ body {
 }
 
 .nav-button .accounts-button a:hover {
- color: #1DB954;
+  color: #1DB954;
 }
 
 
@@ -206,14 +208,12 @@ body {
 .dashboard-container {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 57.5%;
   margin: 0 auto;
   justify-content: center;
 }
 
-
 .Dashboard {
-
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   width: 100%;
@@ -225,7 +225,6 @@ body {
 }
 
 .dashboard-component {
-  background-color: var(--background-secondary);
   height: fit-content;
   margin: 10px;
   border-radius: 8px;
@@ -247,19 +246,26 @@ body {
   width: 100%;
 }
 
-
 .Dashboard>.dashboard-component:nth-child(0) {
   display: flex;
   width: 100%;
-
+  background-color: var(--background);
 }
 
 .Dashboard>.dashboard-component:nth-child(1) {
   grid-column: span 1;
+  background-color: var(--background-secondary);
+
+}
+
+.dashboard-container>.dashboard-component:nth-child(2) {
+  background-color: var(--background-secondary);
 }
 
 .Dashboard>.dashboard-component:nth-child(2) {
   grid-column: span 1;
+  background-color: var(--background-secondary);
+
 }
 
 .Dashboard>.dashboard-component:nth-child(2):hover {
@@ -275,6 +281,7 @@ body {
 
 .Dashboard>.dashboard-component:nth-child(3) {
   grid-column: span 3;
+  background-color: var(--background-secondary);
 }
 
 .Dashboard>.dashboard-component:nth-child(2) {
@@ -329,7 +336,7 @@ body {
 
 .Profile {
   display: flex;
-  width: 80%;
+  width: 75%;
   flex-direction: column;
   margin: 0 auto;
   height: fit-content;
@@ -337,7 +344,6 @@ body {
   justify-content: flex-start;
   border-radius: 12px;
   padding-left: 20px;
-
   margin-top: 20px;
 }
 
@@ -385,7 +391,7 @@ body {
   display: flex;
   font-size: 1.5rem;
   width: fit-content;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .user-desc {
@@ -424,7 +430,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: px;
+  padding: 10px;
   padding-left: 0px;
   color: var(--text-color);
 }
@@ -509,6 +515,7 @@ body {
   margin-top: 10px;
   margin-bottom: 10px;
   font-size: 1.0rem;
+  border-radius: 20px;
 }
 
 .login-footer a {
@@ -538,7 +545,6 @@ body {
   padding: 10px;
 }
 
-
 .recent-widget {
   display: flex;
   flex-direction: column;
@@ -546,7 +552,6 @@ body {
   height: fit-content;
   padding: 10px;
 }
-
 
 .recent-grid {
   display: flex;
@@ -573,7 +578,7 @@ body {
   font-size: 1.0rem;
 }
 
-.song_art img{
+.song_art img {
   width: 100%;
   height: 100%;
   border-radius: 8px;
@@ -608,7 +613,9 @@ body {
 
 .github-star-button {
   display: block;
-  margin-left: 10px;
+  height: 40px !important;
+  border-radius: 20px !important;
+  box-shadow: none !important;
 }
 
 .github-star-button a {
@@ -617,7 +624,17 @@ body {
 
 @media (min-width:300px) and (max-width: 1000px) {
 
-  #nav-title-more {
+  .dashboard-container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+
+
+ #nav-title-more {
     display: block;
   }
 
@@ -627,7 +644,6 @@ body {
   }
 
   .Dashboard {
-
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(1, 1fr);
   }
@@ -738,7 +754,7 @@ body {
   }
 
   .signup-backing {
-    width: 70%;
+    width: 90%;
   }
 
   .early-dev-banner {
@@ -747,7 +763,7 @@ body {
   }
 
   .early-dev-banner span {
-    font-size: 1.0rem;
+    font-size: 0.9rem;
   }
 
   .early-dev-banner svg {

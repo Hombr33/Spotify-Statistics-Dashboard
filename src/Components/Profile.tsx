@@ -4,9 +4,7 @@ import { BsPerson } from 'react-icons/bs';
 
 interface UserProfile {
     data: {
-
         user: string;
-        
     }
 }
 

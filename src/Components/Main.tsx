@@ -23,7 +23,7 @@ function Main() {
                 </div>
 
                 <div className="dashboard-component">
-                    <div className="component3">
+                    <div className="component1">
                         <MonthlyActivity/>
                     </div>
                 </div>
@@ -31,20 +31,20 @@ function Main() {
                 <div className="Dashboard">
 
                     <div className="dashboard-component">
-                        <div className="component1">
+                        <div className="component2">
                             <TopGenres />
                         </div>
                     </div>
 
                     <div className="dashboard-component">
-                        <div className="component2">
+                        <div className="component3">
                             <Artists />
 
                         </div>
                     </div>
 
                     <div className="dashboard-component">
-                        <div className="component3">
+                        <div className="component4">
                             <RecentlyListened />
                         </div>
 
