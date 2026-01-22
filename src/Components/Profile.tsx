@@ -40,7 +40,7 @@ function Profile() {
                     </div>
                     
                     <div className="user-desc">
-                        <span> User description  </span>
+                        <span> User description </span>
                     </div>
 
                     <div className="user-small-stats">

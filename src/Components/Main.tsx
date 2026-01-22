@@ -7,44 +7,41 @@ import RecentlyListened from './RecentlyListened.tsx';
 import EarlyBuildWarning from './EarlyBuildWarning.tsx';
 
 function Main() {
-
     return (
+
         <div className="Main">
 
-            <EarlyBuildWarning />
-            <Profile />
+            <div className="top-component">
+                <EarlyBuildWarning />
+                <Profile />
+                <TopSongs />
+            </div>
 
             <div className="dashboard-container">
 
                 <div className="dashboard-component">
                     <div className="component0">
-                        <TopSongs />
-                    </div>
-                </div>
-
-                <div className="dashboard-component">
-                    <div className="component1">
-                        <MonthlyActivity/>
+                        <MonthlyActivity />
                     </div>
                 </div>
 
                 <div className="Dashboard">
 
                     <div className="dashboard-component">
-                        <div className="component2">
+                        <div className="component1">
                             <TopGenres />
                         </div>
                     </div>
 
                     <div className="dashboard-component">
-                        <div className="component3">
+                        <div className="component2">
                             <Artists />
 
                         </div>
                     </div>
 
                     <div className="dashboard-component">
-                        <div className="component4">
+                        <div className="component3">
                             <RecentlyListened />
                         </div>
 

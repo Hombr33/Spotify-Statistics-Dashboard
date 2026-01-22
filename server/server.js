@@ -3,7 +3,8 @@ import dotenv from "dotenv";
 import pkg from "./connect.cjs";
 import fetchTopArtistsRoute from "./routes/fetchTopArtists.js"
 import fetchAccountsRoute from "./routes/fetchAccount.js"
-import login from "./auth/login.js"
+import loginRoute from "./auth/login.js"
+import signupRoute from "./auth/signup.js"
 
 const { connectMongo } = pkg;
 
@@ -17,9 +18,11 @@ app.get('/', (req, res) => {
     res.send('Hello World!')
 })
 
-app.use("/login", login);
+app.use("/signup", signupRoute);
+app.use("/login", loginRoute);
 app.use("/api", fetchAccountsRoute);
 app.use("/api", fetchTopArtistsRoute);
+
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)

@@ -17,8 +17,8 @@ function Navigation({ handleThemeButton }: NavigationProps) {
         <div className="Navigation-container">
             <div className="Navigation">
                 <div className="nav-logo">
-                    <FaHeadphonesSimple style={{ fontSize: '25px', display: 'flex', alignContent: 'center', color: '#1DB954' }} />
-                    AudioStats <span id="nav-title-more"> - Charts for Spotify </span>
+                    <FaHeadphonesSimple/>
+                    Audio <span id="logo-2">Stats</span>
                 </div>
 
                 <div className="nav-buttons">
@@ -34,16 +34,16 @@ function Navigation({ handleThemeButton }: NavigationProps) {
 
                     <div className="nav-button">
 
-                        <button 
-                        className="accounts-button">
+                        <button
+                            className="accounts-button">
                             <a href="/dashboard">
                                 <FaChartSimple style={{ display: 'flex', alignContent: 'center' }} />
                                 <span> Dashboard </span>
                             </a>
                         </button>
 
-                        <button 
-                        className="accounts-button"
+                        <button
+                            className="accounts-button"
                         >
                             <a href="/">
                                 <MdAccountCircle style={{ display: 'flex', alignContent: 'center' }} />

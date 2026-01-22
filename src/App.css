@@ -47,7 +47,7 @@ body {
 
 .early-dev-banner {
   display: inline-flex;
-  width: 30%;
+  width: 100%;
   height: fit-content;
   text-align: center;
   padding: 10px;
@@ -95,7 +95,7 @@ body {
   display: flex;
   flex-direction: row;
   height: fit-content;
-  width: 80%;
+  width: 60%;
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
@@ -109,10 +109,14 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 20px;
-  font-size: 1.3rem;
+  padding: 15px;
+  font-size: 1.4rem;
   color: var(--text-color);
-  font-weight: 400;
+  font-weight: 500;
+}
+
+#logo-2{
+  color: #1DB954;
 }
 
 .nav-buttons {
@@ -184,7 +188,7 @@ body {
   display: flex;
   flex-direction: column;
   height: fit-content;
-  width: 100%;
+  width: 60%;
   height: auto;
   align-items: flex-start;
   justify-content: flex-start;
@@ -208,7 +212,7 @@ body {
 .dashboard-container {
   display: flex;
   flex-direction: column;
-  width: 57.5%;
+  width: 100%;
   margin: 0 auto;
   justify-content: center;
 }
@@ -222,6 +226,11 @@ body {
   align-items: center;
   margin-top: 20px;
   border-radius: 8px;
+}
+
+.top-component{
+  margin: 0 auto;
+  width: 100%
 }
 
 .dashboard-component {
@@ -249,7 +258,7 @@ body {
 .Dashboard>.dashboard-component:nth-child(0) {
   display: flex;
   width: 100%;
-  background-color: var(--background);
+  background-color: var(--background-secondary);
 }
 
 .Dashboard>.dashboard-component:nth-child(1) {
@@ -262,7 +271,7 @@ body {
   background-color: var(--background-secondary);
 }
 
-.Dashboard>.dashboard-component:nth-child(2) {
+.Dashboard>.dashboard-component:nth-child(3) {
   grid-column: span 1;
   background-color: var(--background-secondary);
 
@@ -303,7 +312,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
+  width: 60%;
   height: 60px;
   margin: 0 auto;
   font-size: 16px;
@@ -336,7 +345,7 @@ body {
 
 .Profile {
   display: flex;
-  width: 75%;
+  width: 100%;
   flex-direction: column;
   margin: 0 auto;
   height: fit-content;
@@ -374,12 +383,12 @@ body {
 .profile-img {
   display: flex;
   height: fit-content;
-  width: 200px;
-  align-items: flex-end;
+  width: fit-content;
+  align-items: center;
   justify-content: center;
   padding: 30px;
   background-color: var(--main-highlight);
-  border-radius: 200px;
+  border-radius: 20px;
 }
 
 .profile-img img {
@@ -449,17 +458,27 @@ body {
   color: var(--main-highlight);
 }
 
+.signup-container,
+.login-container {
+  display: flex;
+  width: fit-content;
+  min-width: 40%;
+  margin: 0 auto;
+  flex-direction: column;
+}
+
 .login-backing,
 .signup-backing {
   display: flex;
   flex-direction: column;
   height: fit-content;
-  width: 30%;
+  width: fit-content;
+  min-width: 100%;
   justify-content: center;
   align-items: flex-start;
   margin: 0 auto;
+  margin-top: 10px;
   padding: 20px;
-  margin: 20px;
   background: var(--background-secondary);
   color: var(--text-color);
   border-radius: 15px;
@@ -631,16 +650,9 @@ body {
     margin: 0 auto;
     justify-content: center;
   }
-
-
-
- #nav-title-more {
+  
+  #nav-title-more {
     display: block;
-  }
-
-  .login-backing,
-  .signup-backing {
-    width: fit-content;
   }
 
   .Dashboard {
@@ -666,10 +678,51 @@ body {
   }
 }
 
-@media (min-width: 200px) and (max-width: 1100px) {
+@media (min-width: 750px) and (max-width: 1100px) {
+
+
+  .Main{
+    width: 100%;
+  }
+
+
+  .top-component{
+    width: 90%;
+  }
+
+}
+
+
+@media (min-width: 200px) and (max-width: 750px) {
+
+  .Main{
+    width: 100%;
+  }
+
+  .early-dev-banner{
+    width: 90%;
+  }
+
+  .top-component{
+    width: 90%;
+  }
 
   .App {
     height: fit-content;
+  }
+
+  .dashboard-container{
+    width: 90%;
+  }
+
+  .dashboard-component{
+    margin: 0 auto;
+    min-width: 100%;
+  }
+
+  .monthly-activity-graph{
+    display: flex;
+    width: 100%;
   }
 
   .Navigation-container {
@@ -714,10 +767,12 @@ body {
   }
 
   .profile-mid {
-    width: 80%;
+    width: 100%;
   }
 
-
+  .Profile {
+    width: 100%;
+  }
 
   .accounts-button span {
     display: none;
@@ -749,17 +804,16 @@ body {
     padding-bottom: 10px;
   }
 
-  .login-backing {
-    width: 80%;
-  }
 
-  .signup-backing {
-    width: 90%;
+  .signup-backing,
+  .login-backing {
+    min-width: 80%;
+    margin: 10px;
   }
 
   .early-dev-banner {
     display: flex;
-    width: 90%;
+    min-width: 80%;
   }
 
   .early-dev-banner span {
@@ -773,5 +827,21 @@ body {
 
   .github-star-button {
     display: none !important;
+  }
+
+  .footer {
+    width: 90%;
+  }
+
+  .dashboard-component3{
+    width: 80%;
+  }
+
+  .recent-widget{
+    width: 100%;
+  }
+
+  .recent-grid{
+    width: 100%;
   }
 }

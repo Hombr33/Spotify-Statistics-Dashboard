@@ -8,6 +8,7 @@ const router = express.Router();
 
 router.get("/fetchAccounts", async (req, res) => {
 
+    //placeholder account until i code the users login system
     try {
         const response = await fetch(url, {
             headers: { "User-Agent": "reddit-dashboard-app/0.1 by GapFeisty" },

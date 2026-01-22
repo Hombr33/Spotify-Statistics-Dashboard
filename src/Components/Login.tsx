@@ -22,51 +22,53 @@ function Login() {
 
     return (
         <section className="Login">
-            <div className="login-backing">
+            <div className="login-container">
+                <div className="login-backing">
 
-                <div className="signup-title">
-                    <FaHeadphonesSimple style={{ fontSize: '25px', alignContent: 'center', color: '#1DB954' }} />
-                    AudioStats - Charts for Spotify
+                    <div className="signup-title">
+                        <FaHeadphonesSimple style={{ fontSize: '25px', alignContent: 'center', color: '#1DB954' }} />
+                        AudioStats - Charts for Spotify
+                    </div>
+
+                    <div className="signup-desc">
+                        Login to your account here
+                    </div>
+
+                    <TextInput
+                        id="username"
+                        variant="filled"
+                        description="Username or Email"
+                        placeholder="Username or Email"
+                        w="100%"
+                        h="fit-content"
+                        styles={{ input: { marginBottom: '10px' } }}
+                    />
+
+                    <PasswordInput
+                        id="password"
+                        variant="filled"
+                        description="Password"
+                        placeholder="Input placeholder"
+                        w="100%"
+                        styles={{ input: { marginBottom: '10px' } }}
+                    />
+
+                    <div className="signup-button">
+                        <Button
+                            onClick={login}
+                            id="Signup-button"
+                            rightSection={<BsArrowRight />}
+                            color="green"
+                        >
+                            Login
+                        </Button>
+                    </div>
+
+                    <div className="login-footer">
+                        Don't have an account? Sign up <a href="/">here</a>
+                    </div>
+
                 </div>
-
-                <div className="signup-desc">
-                    Login to your account here
-                </div>
-
-                <TextInput
-                    id="username"
-                    variant="filled"
-                    description="Username or Email"
-                    placeholder="Username or Email"
-                    w="100%"
-                    h="fit-content"
-                    styles={{ input: { marginBottom: '10px' } }}
-                />
-
-                <PasswordInput
-                    id="password"
-                    variant="filled"
-                    description="Password"
-                    placeholder="Input placeholder"
-                    w="100%"
-                    styles={{ input: { marginBottom: '10px' } }}
-                />
-
-                <div className="signup-button">
-                    <Button
-                        onClick={login}
-                        id="Signup-button"
-                        rightSection={<BsArrowRight />}
-                        color="green"
-                    >
-                        Login
-                    </Button>
-                </div>
-
-                <div className="login-footer">
-                    Don't have an account? Sign up <a href="/">here</a>
-                </div>
-
             </div>
         </section>
     )

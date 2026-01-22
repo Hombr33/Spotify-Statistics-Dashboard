@@ -46,7 +46,6 @@ function RecentlyListened() {
 
                 onClick={fetchRedditComments}> Fetch Comments </Button>
 
-
             <div className="recent-grid">
                 {comments?.map((comment: any, index: number) => (
                     <Song key={index} comment={comment} index={index} />
