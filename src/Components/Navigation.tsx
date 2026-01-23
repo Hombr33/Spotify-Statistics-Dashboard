@@ -4,7 +4,6 @@ import { FaChartSimple } from "react-icons/fa6";
 import { FaHeadphonesSimple } from "react-icons/fa6";
 
 import { Button } from '@mantine/core';
-import { BsStarFill } from 'react-icons/bs';
 import { FaHome } from 'react-icons/fa';
 
 interface NavigationProps {
@@ -55,18 +54,15 @@ function Navigation({ handleThemeButton }: NavigationProps) {
                     </div>
 
                     <div className="nav-button">
-                        <a href="https://github.com/DanielSteele1/Spotify-Statistics-Dashboard">
-
-                            <Button
-                                color="green.7"
-                                className="accounts-button"
-                            >
-                                <a href="/signup">
-                                    <MdAccountCircle style={{ display: 'flex', alignContent: 'center' }} />
-                                    Sign up
-                                </a>
-                            </Button>
-                        </a>
+                        <Button
+                            color="green.7"
+                            className="accounts-button"
+                            component="a"
+                            href="/signup"
+                        >
+                            <MdAccountCircle style={{ display: 'flex', alignContent: 'center', marginRight: '10px', fontSize: '20px' }} />
+                            <span> Sign up </span>
+                        </Button>
                     </div>
                 </div>
             </div>

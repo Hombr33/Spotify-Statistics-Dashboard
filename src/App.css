@@ -71,11 +71,9 @@ body {
 }
 
 .early-dev-banner:hover {
-  transform: translateY(-5px);
-  transition: 0.3s ease-in;
   cursor: pointer;
+  transform: scale(1.01);
 
-  color: var(--main-highlight);
 }
 
 .Navigation-container {
@@ -87,12 +85,10 @@ body {
   top: 0;
   margin: 0 auto;
   background-color: var(--background-secondary);
-
   z-index: 9;
 }
 
 .Navigation {
-
   display: flex;
   flex-direction: row;
   height: fit-content;
@@ -159,14 +155,16 @@ body {
   background-color: none;
 }
 
-.nav-button accounts-button{
+.nav-button accounts-button {
   width: 100% !important;
 }
 
 .accounts-button {
   border-radius: 20px !important;
   box-shadow: none !important;
+  white-space: nowrap !important;
 }
+
 
 .accounts-button a {
   color: var(--text-color);
@@ -202,6 +200,7 @@ body {
   flex-direction: column;
   height: fit-content;
   width: 60%;
+  min-height: 100dvh;
   height: auto;
   align-items: flex-start;
   justify-content: flex-start;
@@ -338,6 +337,8 @@ body {
   vertical-align: middle;
   justify-content: center;
   align-items: center;
+  color: var(--text-color);
+
 }
 
 .social svg {
@@ -680,8 +681,21 @@ body {
   }
 }
 
-@media (min-width: 750px) and (max-width: 1100px) {
+@media (min-width: 1100px) and (max-width: 1600px) {
 
+  .Navigation {
+    width: 85%;
+    height: fit-content;
+    padding: 5px;
+  }
+
+  .Main {
+    width: 85%;
+  }
+
+}
+
+@media (min-width: 750px) and (max-width: 1100px) {
 
   .Main {
     width: 100%;
@@ -691,10 +705,28 @@ body {
     width: 90%;
   }
 
+  .Navigation {
+    width: 85%;
+    height: fit-content;
+    padding: 5px;
+  }
+
+  .Front-page {
+
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 80%;
+    min-height: fit-content;
+    height: fit-content;
+  }
 }
 
-
 @media (min-width: 200px) and (max-width: 750px) {
+
+  .nav-buttons {
+    display: none;
+  }
 
   .Main {
     width: 100%;
@@ -852,4 +884,21 @@ body {
     font-size: 1.0rem !important;
   }
 
+  .Front-page {
+
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 80%;
+    min-height: fit-content;
+    height: fit-content;
+  }
+
+  .page-buttons span{
+
+    padding: 10px;
+    height: 100px;
+    font-size: 1.0rem;
+
+  }
 }
