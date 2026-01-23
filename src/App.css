@@ -23,6 +23,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
+  min-height: 100dvh;
   height: 100dvh;
   font-family: 'Figtree', sans-serif;
   color: whitesmoke;
@@ -104,7 +105,6 @@ body {
 
 }
 
-
 .nav-logo {
   display: flex;
   justify-content: flex-start;
@@ -115,56 +115,68 @@ body {
   font-weight: 500;
 }
 
-#logo-2{
+#logo-2 {
   color: #1DB954;
 }
 
 .nav-buttons {
   display: flex;
   flex-direction: row;
+  width: fit-content;
 }
 
 .nav-button {
 
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 5px;
   border-radius: 8px;
   background-color: transparent;
-
 }
 
-.nav-button .accounts-button a {
+
+.dashboard-button a,
+.home-button a {
+  width: fit-content;
+  color: whitesmoke;
+}
+
+.nav-button .home-button a,
+.dashboard-button a,
+.acccounts-button a {
   display: inline-flex;
   flex-direction: row;
-  color: var(--text-color);
+  width: fit-content;
+  margin: 10px;
   justify-content: center;
   align-items: center;
-  height: fit-content;
-  width: fit-content;
-  font-size: 18px;
-}
-
-.nav-button .accounts-button a:hover {
-  color: #1DB954;
-}
-
-
-.nav-button .accounts-button a span {
-  padding-left: 10px;
-
-}
-
-.nav-button .accounts-button {
-  display: inline-flex;
   flex-direction: row;
-  color: var(--text-color);
+  color: var(--text-color) !important;
+  border-radius: 20px !important;
+
   background-color: none;
+}
+
+.nav-button accounts-button{
+  width: 100% !important;
+}
+
+.accounts-button {
+  border-radius: 20px !important;
+  box-shadow: none !important;
+}
+
+.accounts-button a {
+  color: var(--text-color);
+}
+
+.accounts-button a svg,
+.home-button a svg,
+.dashboard-button a svg {
+  margin-right: 10px;
   font-size: 20px;
-  margin: 10px;
 }
 
 .nav-button .theme-button {
@@ -184,7 +196,8 @@ body {
   margin-right: 20px;
 }
 
-.Main {
+.Main,
+.Front-page {
   display: flex;
   flex-direction: column;
   height: fit-content;
@@ -228,7 +241,7 @@ body {
   border-radius: 8px;
 }
 
-.top-component{
+.top-component {
   margin: 0 auto;
   width: 100%
 }
@@ -352,7 +365,6 @@ body {
   align-items: flex-start;
   justify-content: flex-start;
   border-radius: 12px;
-  padding-left: 20px;
   margin-top: 20px;
 }
 
@@ -630,16 +642,6 @@ body {
   display: flex;
 }
 
-.github-star-button {
-  display: block;
-  height: 40px !important;
-  border-radius: 20px !important;
-  box-shadow: none !important;
-}
-
-.github-star-button a {
-  color: var(--text-color);
-}
 
 @media (min-width:300px) and (max-width: 1000px) {
 
@@ -650,7 +652,7 @@ body {
     margin: 0 auto;
     justify-content: center;
   }
-  
+
   #nav-title-more {
     display: block;
   }
@@ -681,12 +683,11 @@ body {
 @media (min-width: 750px) and (max-width: 1100px) {
 
 
-  .Main{
+  .Main {
     width: 100%;
   }
 
-
-  .top-component{
+  .top-component {
     width: 90%;
   }
 
@@ -695,15 +696,15 @@ body {
 
 @media (min-width: 200px) and (max-width: 750px) {
 
-  .Main{
+  .Main {
     width: 100%;
   }
 
-  .early-dev-banner{
+  .early-dev-banner {
     width: 90%;
   }
 
-  .top-component{
+  .top-component {
     width: 90%;
   }
 
@@ -711,16 +712,16 @@ body {
     height: fit-content;
   }
 
-  .dashboard-container{
+  .dashboard-container {
     width: 90%;
   }
 
-  .dashboard-component{
+  .dashboard-component {
     margin: 0 auto;
     min-width: 100%;
   }
 
-  .monthly-activity-graph{
+  .monthly-activity-graph {
     display: flex;
     width: 100%;
   }
@@ -833,15 +834,22 @@ body {
     width: 90%;
   }
 
-  .dashboard-component3{
+  .dashboard-component3 {
     width: 80%;
   }
 
-  .recent-widget{
+  .recent-widget {
     width: 100%;
   }
 
-  .recent-grid{
+  .recent-grid {
     width: 100%;
   }
+
+  .song-art {
+    width: fit-content;
+    height: 150px !important;
+    font-size: 1.0rem !important;
+  }
+
 }

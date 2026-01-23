@@ -5,6 +5,7 @@ import { FaHeadphonesSimple } from "react-icons/fa6";
 
 import { Button } from '@mantine/core';
 import { BsStarFill } from 'react-icons/bs';
+import { FaHome } from 'react-icons/fa';
 
 interface NavigationProps {
     handleThemeButton: React.MouseEventHandler<HTMLInputElement>
@@ -17,7 +18,7 @@ function Navigation({ handleThemeButton }: NavigationProps) {
         <div className="Navigation-container">
             <div className="Navigation">
                 <div className="nav-logo">
-                    <FaHeadphonesSimple/>
+                    <FaHeadphonesSimple />
                     Audio <span id="logo-2">Stats</span>
                 </div>
 
@@ -33,32 +34,37 @@ function Navigation({ handleThemeButton }: NavigationProps) {
                     </div>
 
                     <div className="nav-button">
+                        <button
+                            className="home-button">
+                            <a href="/">
+                                <FaHome style={{ display: 'flex', alignContent: 'center' }} />
+                                <span> Home </span>
+                            </a>
+                        </button>
+                    </div>
+
+                    <div className="nav-button">
 
                         <button
-                            className="accounts-button">
+                            className="dashboard-button">
                             <a href="/dashboard">
                                 <FaChartSimple style={{ display: 'flex', alignContent: 'center' }} />
                                 <span> Dashboard </span>
                             </a>
                         </button>
+                    </div>
 
-                        <button
-                            className="accounts-button"
-                        >
-                            <a href="/">
-                                <MdAccountCircle style={{ display: 'flex', alignContent: 'center' }} />
-                                <span> Account </span>
-                            </a>
-                        </button>
-
+                    <div className="nav-button">
                         <a href="https://github.com/DanielSteele1/Spotify-Statistics-Dashboard">
 
                             <Button
                                 color="green.7"
-                                className="github-star-button"
+                                className="accounts-button"
                             >
-                                <BsStarFill style={{ margin: '10px', alignContent: 'center' }} />
-                                Star this Project?
+                                <a href="/signup">
+                                    <MdAccountCircle style={{ display: 'flex', alignContent: 'center' }} />
+                                    Sign up
+                                </a>
                             </Button>
                         </a>
                     </div>

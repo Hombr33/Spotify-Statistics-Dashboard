@@ -1,6 +1,7 @@
 import './App.css';
 import Navigation from './Components/Navigation.tsx';
 import Main from './Components/Main.tsx';
+import FrontPage from './Components/Frontpage.tsx';
 import Footer from './Components/Footer.tsx';
 import { Analytics } from "@vercel/analytics/react";
 import { MantineProvider } from '@mantine/core';
@@ -48,8 +49,9 @@ function App() {
         <Router>
           <Navigation handleThemeButton={handleThemeButton} isLightOn={isLightOn} />
           <Routes>
-            <Route path="/" element={<Signup />} />
+            <Route path="/" element={<FrontPage />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
             <Route path="/dashboard" element={<Main />} />
           </Routes>
           <Footer />
