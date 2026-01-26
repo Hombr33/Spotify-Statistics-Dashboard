@@ -10,7 +10,8 @@ const clientSecret = process.env.CLIENT_SECRET;
 const clientId = process.env.CLIENT_ID;
 
 router.get("/", (req, res) => {
-  var scope = 'user-read-private user-read-email';
+  const scope = 'user-read-private user-read-email';
+  const state = Math.random().toString(36).substring(2);
 
   res.redirect('https://accounts.spotify.com/authorize?' +
     querystring.stringify({
@@ -18,6 +19,8 @@ router.get("/", (req, res) => {
       client_id: clientId,
       scope: scope,
       redirect_uri: redirect_uri,
+      state: state,
+      show_dialog: true
     }));
 });
 
@@ -44,6 +47,8 @@ router.get("/callback", async (req, res) => {
     });
 
     const data = await tokenResponse.json();
+    console.log("Token Response:", data);
+
 
     if (data.access_token) {
       res.redirect(`https://reddit-statistics-app.vercel.app/callback?access_token=${data.access_token}`);
