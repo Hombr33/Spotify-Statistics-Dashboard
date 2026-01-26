@@ -9,6 +9,18 @@ const redirect_uri = 'https://reddit-statistics-app.vercel.app/callback'; //redi
 const clientSecret = process.env.CLIENT_SECRET;
 const clientId = process.env.CLIENT_ID;
 
+router.get("/", (req, res) => {
+  var scope = 'user-read-private user-read-email';
+
+  res.redirect('https://accounts.spotify.com/authorize?' +
+    querystring.stringify({
+      response_type: 'code',
+      client_id: clientId,
+      scope: scope,
+      redirect_uri: redirect_uri,
+    }));
+});
+
 router.get("/callback", async (req, res) => {
 
   var code = req.query.code || null;
