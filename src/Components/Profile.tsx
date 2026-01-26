@@ -3,9 +3,12 @@ import { useState } from 'react';
 import { BsPerson } from 'react-icons/bs';
 
 interface UserProfile {
-    data: {
-        user: string;
-    }
+
+    display_name: string;
+    id: string;
+    email?: string;
+    followers?: { total: number};
+    images: { url: string};
 }
 
 function Profile() {
@@ -22,11 +25,9 @@ function Profile() {
                 headers: { Authorization: `Bearer ${authToken}` },
             });
 
-            const json = await response.json();
+            const data = await response.json();
 
-            setUser(json.user);
-            console.log(json);
-            console.log(user);
+            setUser(data);
 
         } catch (error) {
             console.log(error);
@@ -39,7 +40,7 @@ function Profile() {
 
                 <div className="profile-info">
                     <div className="profile-name">
-                        Welcome {"User's name here"}
+                        Welcome {user?.display_name || 'user'}
                     </div>
 
                     <div className="user-desc">

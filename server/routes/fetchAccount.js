@@ -7,13 +7,15 @@ const router = express.Router();
 
 router.get("/fetchAccounts", async (req, res) => {
 
-    const authHeader = req.headers.authorization; // extract auth token from the header of frontend req
+    const authHeader = req.headers.authorization; 
+// extract auth token from the header of frontend req
     if (!authHeader) return res.status(401).json({ error: "No auth token provided" });
 
     const authToken = authHeader.split(" ")[1];
 
     try {
         const response = await fetch(url, {
+            method: 'GET',
             headers: { Authorization: `Bearer ${authToken}` },
         });
 
