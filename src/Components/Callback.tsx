@@ -9,7 +9,7 @@ function AuthCallback() {
 
     useEffect(() => {
 
-        const accessToken = searchParams.get('access_token')
+        const accessToken = searchParams.get('code')
 
         if (accessToken) {
 

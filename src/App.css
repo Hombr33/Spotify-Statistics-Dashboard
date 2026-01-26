@@ -61,6 +61,7 @@ body {
 
 .loader-container span {
   height: 50px;
+  color: var(--text-color);
   text-align: center;
 }
 
@@ -752,11 +753,13 @@ body {
   .loader-container {
     width: 80%;
     padding: 10px;
+
   }
 
   .loader-container span {
     padding: 10px;
   }
+
   .nav-buttons {
     display: none;
   }

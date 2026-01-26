@@ -45,7 +45,6 @@ function App() {
   }), ([isLightOn, setLightOn]);
 
   return (
-
     <MantineProvider data-mantine-color-scheme={isLightOn ? 'dark' : 'light'}>
       <div className="App">
         <Router>
