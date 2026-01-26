@@ -3,6 +3,8 @@ import Navigation from './Components/Navigation.tsx';
 import Main from './Components/Main.tsx';
 import FrontPage from './Components/Frontpage.tsx';
 import Footer from './Components/Footer.tsx';
+
+import AuthCallback from './Components/Callback.tsx';
 import { Analytics } from "@vercel/analytics/react";
 import { MantineProvider } from '@mantine/core';
 
@@ -53,6 +55,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/dashboard" element={<Main />} />
+            <Route path="/callback" element={<AuthCallback />} />
           </Routes>
           <Footer />
           <Analytics />
