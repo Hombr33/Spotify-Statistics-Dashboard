@@ -19,7 +19,7 @@ router.get("/fetchAccounts", async (req, res) => {
             headers: { Authorization: `Bearer ${authToken}` },
         });
 
-        console.log("Token received by backend:", token);
+        console.log("Token received by backend:", authToken);
 
         console.log("Status code from Spotify:", response.status);
         const text = await response.text();

@@ -20,7 +20,7 @@ function Profile() {
     const fetchSpotifyAccount = async () => {
 
         try {
-            const response = await fetch('/api/fetchAccounts', {
+            const response = await fetch('https://spotify-statistics-dashboard.onrender.com/api/fetchAccounts', {
                 method: "GET",
                 headers: { Authorization: `Bearer ${authToken}` },
             });
