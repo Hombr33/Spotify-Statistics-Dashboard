@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.get("/fetchAccounts", async (req, res) => {
 
-    const authHeader = req.headers.authorization; 
+    const authHeader = req.headers.authorization;
     // extract auth token from the header of frontend req
     if (!authHeader) return res.status(401).json({ error: "No auth token provided" });
 
@@ -19,8 +19,11 @@ router.get("/fetchAccounts", async (req, res) => {
             headers: { Authorization: `Bearer ${authToken}` },
         });
 
-        const text = await response.text(); 
-        console.log("Spotify raw response:", text);
+        console.log("Token received by backend:", token);
+
+        console.log("Status code from Spotify:", response.status);
+        const text = await response.text();
+        console.log("Raw response from Spotify:", text);
 
         try {
             const data = JSON.parse(text);

@@ -7,8 +7,8 @@ interface UserProfile {
     display_name: string;
     id: string;
     email?: string;
-    followers?: { total: number};
-    images: { url: string};
+    followers?: { total: number };
+    images: { url: string };
 }
 
 function Profile() {
@@ -25,6 +25,9 @@ function Profile() {
                 headers: { Authorization: `Bearer ${authToken}` },
             });
 
+
+            console.log("Token being sent:", authToken);
+            
             const data = await response.json();
 
             setUser(data);
