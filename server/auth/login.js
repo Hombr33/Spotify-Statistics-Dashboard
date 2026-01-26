@@ -4,7 +4,7 @@ import express from "express";
 import querystring from "querystring";
 
 const router = express.Router();
-const redirect_uri = 'https://reddit-statistics-app.vercel.app/callback'; //redirect URI here.
+const redirect_uri = 'https://spotify-statistics-dashboard.onrender.com/callback'; //redirect URI here.
 
 const clientSecret = process.env.CLIENT_SECRET;
 const clientId = process.env.CLIENT_ID;
