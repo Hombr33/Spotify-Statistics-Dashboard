@@ -10,13 +10,16 @@ interface UserProfile {
 
 function Profile() {
 
-    const [user,setUser] = useState<UserProfile | null>(null);
+    const [user, setUser] = useState<UserProfile | null>(null);
+
+    const authToken = localStorage.getItem('authToken');
 
     const fetchSpotifyAccount = async () => {
 
         try {
             const response = await fetch('/api/fetchAccounts', {
-                method: "POST",
+                method: "GET",
+                headers: { Authorization: `Bearer ${authToken}` },
             });
 
             const json = await response.json();
@@ -38,7 +41,7 @@ function Profile() {
                     <div className="profile-name">
                         Welcome {"User's name here"}
                     </div>
-                    
+
                     <div className="user-desc">
                         <span> User description </span>
                     </div>
@@ -48,7 +51,7 @@ function Profile() {
                 </div>
 
                 <div className="profile-img">
-                    <BsPerson style={{fontSize: '50px'}}/>
+                    <BsPerson style={{ fontSize: '50px' }} />
                 </div>
             </div>
 

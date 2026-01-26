@@ -1,17 +1,20 @@
 import express from "express";
 import fetch from "node-fetch";
 
-const username = "GapFeisty";
-const url = `https://www.reddit.com/user/${username}/about.json`;
+const url = `https://api.spotify.com/v1/me`;
 
 const router = express.Router();
 
 router.get("/fetchAccounts", async (req, res) => {
 
-    //placeholder account until i code the users login system
+    const authHeader = req.headers.authorization; // extract auth token from the header of frontend req
+    if (!authHeader) return res.status(401).json({ error: "No auth token provided" });
+
+    const authToken = authHeader.split(" ")[1];
+
     try {
         const response = await fetch(url, {
-            headers: { "User-Agent": "reddit-dashboard-app/0.1 by GapFeisty" },
+            headers: { Authorization: `Bearer ${authToken}` },
         });
 
         const data = await response.json();

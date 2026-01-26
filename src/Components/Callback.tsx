@@ -1,5 +1,4 @@
 
-
 import { useEffect } from "react";
 import { useSearchParams } from "react-router";
 import { Loader } from '@mantine/core';
@@ -12,9 +11,7 @@ function AuthCallback() {
         const accessToken = searchParams.get('code')
 
         if (accessToken) {
-
             localStorage.setItem('authToken', accessToken);
-
             setTimeout(() => {
                 window.location.href = '/dashboard';
             }, 2000);
