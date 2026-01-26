@@ -8,7 +8,8 @@ function AuthCallback() {
 
     useEffect(() => {
 
-        const accessToken = searchParams.get('code')
+        // this gets the code from the URL - this needs
+        const accessToken = searchParams.get('auth_token')
 
         if (accessToken) {
             localStorage.setItem('authToken', accessToken);
