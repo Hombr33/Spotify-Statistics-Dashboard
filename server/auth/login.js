@@ -34,7 +34,7 @@ router.get("/callback", async (req, res) => {
     const data = await tokenResponse.json();
 
     if (data.access_token) {
-      res.redirect(`https://reddit-statistics-app.vercel.app/dashboard?access_token=${data.access_token}`);
+      res.redirect(`https://reddit-statistics-app.vercel.app/callback?access_token=${data.access_token}`);
     } else {
       res.redirect('https://reddit-statistics-app.vercel.app/login?error=token_failed');
     }

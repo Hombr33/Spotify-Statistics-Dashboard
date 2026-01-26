@@ -20,7 +20,6 @@ function AuthCallback() {
             }, 2000);
         }
 
-
     }, [searchParams]);
 
     return (
