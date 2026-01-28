@@ -1,6 +1,10 @@
 import { useState } from "react";
 import Song from './Song.tsx';
+import SongPlaceholder from "./SongPlaceholder.tsx";
+
 import { Button } from '@mantine/core';
+
+import { Pagination } from "@mantine/core";
 
 interface Comments {
 
@@ -15,6 +19,10 @@ interface Comments {
 function RecentlyListened() {
 
     const [comments, setComments] = useState<Comments[] | null>(null);
+    const [results, setResults] = useState(false);
+
+
+
 
     const fetchRedditComments = async () => {
 
@@ -24,6 +32,8 @@ function RecentlyListened() {
 
             const comments = json.data.children.map((child: { data: any; }) => child.data);
             setComments(comments);
+
+            setResults(true);
             console.log(comments);
 
         } catch (e) {
@@ -34,8 +44,7 @@ function RecentlyListened() {
     return (
 
         <section className="recent-widget">
-
-            <span> Recently Listened Songs </span>
+            <span> Listening History </span>
 
             <Button
                 color="green.7"
@@ -47,14 +56,28 @@ function RecentlyListened() {
                 onClick={fetchRedditComments}> Fetch Comments </Button>
 
             <div className="recent-grid">
-                {comments?.map((comment: any, index: number) => (
-                    <Song key={index} comment={comment} index={index} />
-                ))}
 
+                {!comments ? (
+                    <SongPlaceholder />
+                ) : (
+
+                    comments?.map((comment: any, index: number) => (
+                        <Song key={index} comment={comment} index={index} />
+                    ))
+                )}
             </div>
 
+            <div className="pagination">
+                <Pagination
+                    total={5}
+                    color="green.7"
+                    size="md"
+                    radius="sm"
+                    withEdges
+                />
+            </div>
 
-        </section>
+        </section >
     )
 }
 

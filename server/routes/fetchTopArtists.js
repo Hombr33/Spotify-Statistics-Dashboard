@@ -19,7 +19,7 @@ router.get("/fetchTopArtists", async (req, res) => {
         });
 
         const data = await response.json();
-        res.json(data);
+        res.json(data[5]);
     } catch (err) {
         console.error(err);
         res.status(500).json({ error: "Failed to fetch Reddit comments" });

@@ -2,6 +2,7 @@ import './App.css';
 import Navigation from './Components/Navigation.tsx';
 import Main from './Components/Main.tsx';
 import FrontPage from './Components/Frontpage.tsx';
+import ErrorPage from './Components/Errorpage.tsx';
 import Footer from './Components/Footer.tsx';
 
 import AuthCallback from './Components/Callback.tsx';
@@ -55,6 +56,7 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/dashboard" element={<Main />} />
             <Route path="/callback" element={<AuthCallback />} />
+            <Route path="/*" element={<ErrorPage />} />
           </Routes>
           <Footer />
           <Analytics />
