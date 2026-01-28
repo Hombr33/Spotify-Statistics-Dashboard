@@ -19,10 +19,6 @@ interface Comments {
 function RecentlyListened() {
 
     const [comments, setComments] = useState<Comments[] | null>(null);
-    const [results, setResults] = useState(false);
-
-
-
 
     const fetchRedditComments = async () => {
 
@@ -32,8 +28,6 @@ function RecentlyListened() {
 
             const comments = json.data.children.map((child: { data: any; }) => child.data);
             setComments(comments);
-
-            setResults(true);
             console.log(comments);
 
         } catch (e) {
