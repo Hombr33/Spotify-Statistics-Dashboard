@@ -85,22 +85,21 @@ router.get("/callback", async (req, res) => {
 
       httpOnly: true,
       secure: true,
-      sameSite: lax,
+      sameSite: 'lax',
       maxAge: data.expires_in * 1000
     });
 
     res.cookie('spotify_refresh_token', data.refresh_token, {
       httpOnly: true,
       secure: true,
-      sameSite: lax,
+      sameSite: 'lax',
     })
-
 
     // now we can get a profile !
 
     const response = await fetch("https://api.spotify.com/v1/me", {
       headers: { 
-        Authorization: `Bearer $(data.access_token)`,
+        Authorization: `Bearer ${data.access_token}`,
       }
     })
 
