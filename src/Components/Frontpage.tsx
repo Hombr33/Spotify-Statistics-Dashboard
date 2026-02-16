@@ -1,95 +1,50 @@
-import EarlyBuildWarning from './EarlyBuildWarning';
+import { Container, Title, Text, Button, Group, Stack, Grid, Box, Paper } from "@mantine/core";
+import { GitHubLogoIcon, PersonIcon } from "@radix-ui/react-icons";
+import classes from './hero3.module.css';
 import './Frontpage.css';
 
-declare global {
-    namespace JSX {
-        interface IntrinsicElements {
-            marquee: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
-        }
-    }
-}
-
-function Frontpage() {
+const FrontPage = () => {
 
     return (
-        <section className="Front-page">
+        <Box>
+            <Container size="xl" py={250}>
+                <Grid gutter={1} align="center">
+                    <Grid.Col span={{ base: 12, md: 7 }}>
+                        <Stack gap="xl">
+                          
 
-            <EarlyBuildWarning />
+                            <Title maw={500} className={classes?.title} order={1} size="h1">
+                                AudioStats - view your spotify listening data
+                            </Title>
 
-            <div className="page-title">
-                <div className="main-title">
-                    Audio <div id="highlight">Stats</div>
-                </div>
+                            <Text size="xl" c="dimmed" maw={600}>
+                                Sign up and view detailed insights based on your Spotify listening habits. Experience this 
+                            </Text>
 
-                <div className="page-title2">
-                    Spotify statistics dashboard
-                </div>
-            </div>
+                            <Group mt="xl">
+                                <Button size="xl" leftSection={<PersonIcon />} color="var(--mantine-primary-color-filled)">
+                                    Sign up
+                                </Button>
+                                <Button size="xl" variant="default" leftSection={<GitHubLogoIcon />}>
+                                    View Github Repo
+                                </Button>
+                            </Group>
+                        </Stack>
+                    </Grid.Col>
 
-            <div className="page-sub-title">
-                <span>
-                    View your spotify listening history
-                </span>
-
-                <span>
-                    Get statistics based on your listening habits
-                </span>
-
-                <span>
-                    Get new music recommendations
-                </span>
-
-            </div>
-
-            <span className="page-description">
-                Connect to spotify via AudioStats to get back detailed user listening history,
-                displayed onto a beatiful custom UI dashboard. Find out how many hours you've been listening,
-                your most liked genre, and much more.
-
-                <div className="page-buttons">
-
-                    {/* <Button
-                        color="green.7"
-                        className="sign-in-button"
-                        component="a"
-                        href="/signup"
-
-                        style={{
-                            fontSize: '20px',
-                            margin: '30px',
-                            height: '40px',
-
-                        }}
-                    >
-                        <span> Sign up </span>
-                    </Button> */}
-
-                    <span id="highlight">
-                        Sign up's are currently disabled to to ongoing development. 
-                        Be sure to check back later! 
-                    </span>
-
-                </div>
-            </span>
-
-            <div className="page-screenshots">
-
-                <div className="page-card">
-                    Placeholder
-                </div>
-                <div className="page-card">
-
-                   Placeholder
-                </div>
-                <div className="page-card">
-
-                   Placeholder
-                </div>
-
-            </div>
-
-        </section>
+                    <Grid.Col span={{ base: 12, md: 5 }}>
+                        <Paper
+                            mih={320}
+                            radius="md"
+                            p="xl"
+                            bg={"rgba(255, 255, 255, 0.1)"}
+                            bd={" 1px solid rgba(255, 255, 255, 0.1) "}
+                        ></Paper>
+                    </Grid.Col>
+                </Grid>
+            </Container>
+        </Box>
     );
-}
+};
 
-export default Frontpage;
+export default FrontPage;

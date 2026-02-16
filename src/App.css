@@ -69,15 +69,20 @@ body {
 }
 
 .loader-container span {
-  height: 50px;
+  height: fit-content;
+  padding: 20px;
   color: var(--text-color);
+  font-size: 1.3rem;
   text-align: center;
 }
 
 .loader {
+  display: flex;
   width: 80%;
-  margin: 10px;
-
+  height: 50px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
 }
 
 .early-dev-banner {
@@ -396,11 +401,11 @@ body {
   width: 100%;
   flex-direction: column;
   margin: 0 auto;
-  height: fit-content;
+  height: 200px;
   align-items: flex-start;
   justify-content: flex-start;
   border-radius: 12px;
-  margin-top: 20px;
+  padding: 10px;
 }
 
 .profile-top {
@@ -409,6 +414,7 @@ body {
   justify-content: space-between;
   width: 100%;
   color: var(--text-color);
+  padding-top: 20px;
 }
 
 .profile-mid {
@@ -825,7 +831,12 @@ body {
 
 @media (min-width: 750px) and (max-width: 1100px) {
 
-  .footer{
+  .loader-container{
+    width: 80%;
+    font-size: 1.0rem;
+  }
+
+  .footer {
     width: 80%
   }
 
@@ -883,14 +894,23 @@ body {
     font-size: 1.5rem;
   }
 
-
   .loader-container {
+    display: flex;
+    flex-direction: column;
     width: 80%;
     padding: 10px;
-
+    height: 300px;
+    min-height: 200px;
   }
 
   .loader-container span {
+    padding: 10px;
+    font-size: 1.1rem;
+  }
+
+  .loader{
+    display: flex;
+    height: 100px;
     padding: 10px;
   }
 
@@ -975,6 +995,7 @@ body {
 
   .Profile {
     width: 100%;
+    height: fit-content;
   }
 
   .accounts-button span {

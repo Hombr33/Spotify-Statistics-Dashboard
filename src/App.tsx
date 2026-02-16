@@ -30,7 +30,6 @@ function App() {
 
   const handleThemeButton: React.MouseEventHandler<HTMLInputElement> = () => {
     setLightOn(prev => !prev);
-
   };
 
   useEffect(() => {
@@ -46,7 +45,7 @@ function App() {
   }), ([isLightOn, setLightOn]);
 
   return (
-    <MantineProvider data-mantine-color-scheme={isLightOn ? 'dark' : 'light'}>
+    <MantineProvider  data-mantine-color-scheme={isLightOn ? 'dark' : 'light'}>
       <div className="App">
         <Router>
           <Navigation handleThemeButton={handleThemeButton} isLightOn={isLightOn} />

@@ -18,9 +18,6 @@ router.get("/", (req, res) => {
   // we're using a cookie to save the state for verification
   res.cookie('spotify_auth_state', state, {httpOnly: true, secure: true, sameSite: 'lax'});
 
-
-
-
   // Authorise the user
   res.redirect('https://accounts.spotify.com/authorize?' +
     querystring.stringify({
@@ -52,7 +49,6 @@ router.get("/callback", async (req, res) => {
 
   res.clearCookie('spotify_auth_state');
 
-
   if (!code) {
     return res.redirect('https://reddit-statistics-app.vercel.app/login?error=no_code');
   }
@@ -72,6 +68,8 @@ router.get("/callback", async (req, res) => {
     });
 
     const data = await tokenResponse.json();
+
+    console.log("TOKEN RESPONSE:", data);
 
     if (data.error) {
 

@@ -26,14 +26,14 @@ function AuthCallback() {
 
                 <span> Account successfully connected to spotify!
                     Forwarding you to the dashboard... </span>
-
-                <Loader
-                    className="loader"
-                    color='#1DB954'
-                    size='lg'
-                />
+                    
+                <div className="loader">
+                    <Loader
+                        color='#1DB954'
+                        size='lg'
+                    />
+                </div>
             </div>
-
         </section>
     )
 }
