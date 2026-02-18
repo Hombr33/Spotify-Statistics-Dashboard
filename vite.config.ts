@@ -1,16 +1,28 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
+import basicSsl from '@vitejs/plugin-basic-ssl'
+
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
+
+    basicSsl({
+      /** name of certification */
+      name: 'test',
+      /** custom trust domains */
+      domains: ['*.custom.com'],
+      /** custom certification directory */
+      certDir: '/Users/.../.devServer/cert',
+    }),
+
     react({
       babel: {
         plugins: [['babel-plugin-react-compiler']],
       },
     }),
   ],
-  server:{
+  server: {
     proxy: {
       "/api": "http://localhost:3000"
     }

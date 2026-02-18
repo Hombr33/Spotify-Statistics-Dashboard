@@ -1,35 +1,35 @@
-import { Switch } from '@mantine/core';
-import { MdAccountCircle } from "react-icons/md";
 import { FaChartSimple } from "react-icons/fa6";
-import { FaHeadphonesSimple } from "react-icons/fa6";
-
 import { Button } from '@mantine/core';
 import { FaHome } from 'react-icons/fa';
+import { BarChartIcon, MoonIcon, SunIcon } from '@radix-ui/react-icons';
 
 interface NavigationProps {
     handleThemeButton: React.MouseEventHandler<HTMLInputElement>
     isLightOn?: boolean;
 }
 
-function Navigation({ handleThemeButton }: NavigationProps) {
+
+function Navigation({ handleThemeButton, isLightOn }: NavigationProps) {
 
     return (
         <div className="Navigation-container">
             <div className="Navigation">
                 <div className="nav-logo">
-                    <FaHeadphonesSimple />
+                    <BarChartIcon style={{fontSize: '20px'}}/>
                     Audio <span id="logo-2">Stats</span>
                 </div>
 
                 <div className="nav-buttons">
+
                     <div className="nav-button">
-                        <Switch
-                            className="theme-button"
-                            onClick={handleThemeButton}
-                            size="md"
-                            color='green.7'
+                        <Button
+                            color="green.7"
+                            className="accounts-button"
+                            component="a"
+                            href="/signup"
                         >
-                        </Switch>
+                            <span> Sign up </span>
+                        </Button>
                     </div>
 
                     <div className="nav-button">
@@ -54,16 +54,15 @@ function Navigation({ handleThemeButton }: NavigationProps) {
                     </div>
 
                     <div className="nav-button">
-                        <Button
-                            color="green.7"
-                            className="accounts-button"
-                            component="a"
-                            href="/signup"
+                        <button
+                            className="theme-button"
+                            //={handleThemeButton}
                         >
-                            <MdAccountCircle style={{ display: 'flex', alignContent: 'center', marginRight: '10px', fontSize: '20px' }} />
-                            <span> Sign up </span>
-                        </Button>
+                            {isLightOn ? <SunIcon /> : <MoonIcon />}
+                        </button>
                     </div>
+
+                   
                 </div>
             </div>
         </div>

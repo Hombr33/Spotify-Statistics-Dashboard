@@ -19,6 +19,7 @@
     "@tailwindcss/vite": "^4.1.13",
     "@tippyjs/react": "^4.2.6",
     "@vercel/analytics": "^1.5.0",
+    "@vitejs/plugin-basic-ssl": "^2.1.4",
     "bcrpyt": "^2.0.0",
     "bcrypt": "^6.0.0",
     "cookie-parser": "^1.4.7",

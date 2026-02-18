@@ -2,9 +2,6 @@
 import { PasswordInput, TextInput } from '@mantine/core';
 import { BsArrowRight } from 'react-icons/bs';
 import { Button } from '@mantine/core';
-import { FaHeadphonesSimple } from "react-icons/fa6";
-import EarlyBuildWarning from './EarlyBuildWarning';
-
 
 import { useState } from 'react';
 
@@ -36,7 +33,7 @@ function Signup() {
             const data = await response.json();
             console.log(data);
 
-            if(response.ok) {
+            if (response.ok) {
                 localStorage.setItem("token", data.token);
                 setUserId(data.userId);
                 window.location.href = '/login';
@@ -50,12 +47,10 @@ function Signup() {
     return (
         <section className="Signup">
             <div className="signup-container">
-                <EarlyBuildWarning />
 
                 <form className="signup-backing" onSubmit={handleSignUp}>
 
                     <div className="signup-title">
-                        <FaHeadphonesSimple style={{ fontSize: '20px', alignContent: 'center', color: '#1DB954' }} />
                         AudioStats - Charts for Spotify
                     </div>
 
@@ -63,37 +58,39 @@ function Signup() {
                         Signup to AudioStats to connect with spotify and get insights into your listening history.
                     </div>
 
-                    <TextInput
-                        id="username"
-                        variant="filled"
-                        description="Username or Email"
-                        placeholder="Username or Email"
-                        w="100%"
-                        h="fit-content"
-                        required
-                        type="email"
-                        styles={{ input: { marginBottom: '10px' } }}
-                        value={signupEmail}
-                        onChange={(e) => setSignupEmail(e.currentTarget.value)}
-                    />
+                    <div className="credentials-container">
+                        <TextInput
+                            id="username"
+                            variant="filled"
+                            description="Username or Email"
+                            placeholder="Username or Email"
+                            w="100%"
+                            h="fit-content"
+                            required
+                            type="email"
+                            styles={{ input: { marginBottom: '10px' } }}
+                            value={signupEmail}
+                            onChange={(e) => setSignupEmail(e.currentTarget.value)}
+                        />
 
-                    <PasswordInput
-                        id="password"
-                        variant="filled"
-                        description="Password"
-                        placeholder="Input placeholder"
-                        required
-                        w="100%"
-                        styles={{ input: { marginBottom: '10px' } }}
-                        value={signupPassword}
-                        onChange={(e) => setSignupPassword(e.currentTarget.value)}
-                    />
+                        <PasswordInput
+                            id="password"
+                            variant="filled"
+                            description="Password"
+                            placeholder="Input placeholder"
+                            required
+                            w="100%"
+                            styles={{ input: { marginBottom: '10px' } }}
+                            value={signupPassword}
+                            onChange={(e) => setSignupPassword(e.currentTarget.value)}
+                        />
+                    </div>
 
                     <div className="signup-button">
                         <Button
                             id="Signup-button"
                             rightSection={<BsArrowRight />}
-                            color="green"
+                            color="green.7"
                             type="submit"
                         >
                             Sign up
