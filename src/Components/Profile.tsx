@@ -1,32 +1,16 @@
 
-import { useState } from 'react';
 import { BsPerson } from 'react-icons/bs';
 
-interface UserProfile {
+interface ProfileProps {
 
-    display_name: string;
-    id: string;
-    email?: string;
-    followers?: { total: number };
-    images: { url: string };
+    ProfileData: {
+
+        display_name: string;
+
+    };
 }
 
-function Profile() {
-
-    const [user] = useState<UserProfile | null>(null);
-
-    const access_token = localStorage.getItem('access_token');
-
-    async function fetchProfile() {
-      
-            const response = await fetch("https://api.spotify.com/v1/me", {
-                method: "GET",
-                headers: { Authorization: `Bearer ${access_token}` },
-            });
-            
-            const profile_data = await response.json();
-            console.log(profile_data);
-        }
+function Profile({ProfileData}: ProfileProps) {
 
     return (
         <section className="Profile">
@@ -34,7 +18,7 @@ function Profile() {
 
                 <div className="profile-info">
                     <div className="profile-name">
-                        Welcome {user?.display_name || 'user'}
+                        Welcome {ProfileData?.display_name || 'user'}
                     </div>
 
                     <div className="user-desc">
@@ -59,7 +43,6 @@ function Profile() {
                 <span id="stat"><div id="stat-number">  </div> Followers </span>
 
             </div>
-            <button onClick={fetchProfile}> Fetch Spotify account data!  </button>
         </section>
     )
 }

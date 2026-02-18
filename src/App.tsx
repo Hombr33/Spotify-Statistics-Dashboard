@@ -46,6 +46,7 @@ function App() {
 
   const clientId = '9d3a726e6a8c4914b4646fa6d9d71e04';
   const redirectUri = 'https://reddit-statistics-app.vercel.app/callback'
+  //const redirectUri = 'https://localhost:5173/callback'
 
   return (
     <MantineProvider data-mantine-color-scheme={isLightOn ? 'dark' : 'light'}>
@@ -54,7 +55,7 @@ function App() {
           <Navigation handleThemeButton={handleThemeButton} isLightOn={isLightOn} />
           <Routes>
             <Route path="/" element={<FrontPage />} />
-            <Route path="/login" element={<Login clientId={clientId} redirectUri={redirectUri}/>} />
+            <Route path="/login" element={<Login clientId={clientId} redirectUri={redirectUri} />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/dashboard" element={<Main />} />
             <Route path="/callback" element={<Callback clientId={clientId} redirectUri={redirectUri} />} />
