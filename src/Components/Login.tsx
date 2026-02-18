@@ -3,7 +3,14 @@ import { PasswordInput, TextInput } from '@mantine/core';
 import { BsArrowRight } from 'react-icons/bs';
 import { Button } from '@mantine/core';
 
-function Login() {
+
+interface loginProps{
+
+    clientId: string;
+    redirectUri: string;
+}
+
+function Login({clientId, redirectUri}:loginProps) {
 
     async function Authentication() {
 
@@ -33,9 +40,6 @@ function Login() {
 
         // get request to the authorization endpoint
 
-        const clientId = '9d3a726e6a8c4914b4646fa6d9d71e04';
-        const redirectUri = 'https://reddit-statistics-app.vercel.app/callback'
-
         const scope = 'user-read-private user-read-email';
         const authUrl = new URL("https://accounts.spotify.com/authorize")
 
@@ -52,39 +56,6 @@ function Login() {
 
         authUrl.search = new URLSearchParams(params).toString();
         window.location.href = authUrl.toString();
-
-        const urlParams = new URLSearchParams(window.location.search);
-        const code = urlParams.get('code');
-
-        const getToken = async (code: string) => {
-
-            const codeVerifier = localStorage.getItem('code_verifier');
-
-            if(!codeVerifier) {
-                console.log('CodeVerifier missing, cannot complete verifiation');
-                return;
-            }
-
-            const url = "https://accounts.spotify.com/api/token";
-            const payload = {
-
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: new URLSearchParams({
-                    client_id: clientId,
-                    grant_type: 'authorization_code',
-                    code,
-                    redirect_uri: redirectUri,
-                    code_verifier: codeVerifier,
-                }),
-            }
-
-            const body = await fetch(url, payload);
-            const response = await body.json();
-            localStorage.setItem('access_token', response.access_token);
-        }
     }
 
     return (

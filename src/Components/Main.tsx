@@ -7,6 +7,7 @@ import RecentlyListened from './RecentlyListened.tsx';
 import EarlyBuildWarning from './EarlyBuildWarning.tsx';
 
 function Main() {
+
     return (
 
         <div className="Main">

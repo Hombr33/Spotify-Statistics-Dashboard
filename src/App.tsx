@@ -5,7 +5,7 @@ import FrontPage from './Components/Frontpage.tsx';
 import ErrorPage from './Components/Errorpage.tsx';
 import Footer from './Components/Footer.tsx';
 
-import AuthCallback from './Components/Callback.tsx';
+import Callback from './Components/Callback.tsx';
 import { Analytics } from "@vercel/analytics/react";
 import { MantineProvider } from '@mantine/core';
 
@@ -28,7 +28,7 @@ function App() {
 
   });
 
-  const handleThemeButton: React.MouseEventHandler<HTMLInputElement> = () => {
+  const handleThemeButton: React.MouseEventHandler<HTMLButtonElement> = () => {
     setLightOn(prev => !prev);
   };
 
@@ -44,17 +44,21 @@ function App() {
 
   }), ([isLightOn, setLightOn]);
 
+  const clientId = '9d3a726e6a8c4914b4646fa6d9d71e04';
+  const redirectUri = 'https://reddit-statistics-app.vercel.app/callback'
+
+
   return (
-    <MantineProvider  data-mantine-color-scheme={isLightOn ? 'dark' : 'light'}>
+    <MantineProvider data-mantine-color-scheme={isLightOn ? 'dark' : 'light'}>
       <div className="App">
         <Router>
           <Navigation handleThemeButton={handleThemeButton} isLightOn={isLightOn} />
           <Routes>
             <Route path="/" element={<FrontPage />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/login" element={<Login clientId={clientId} redirectUri={redirectUri}/>} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/dashboard" element={<Main />} />
-            <Route path="/callback" element={<AuthCallback />} />
+            <Route path="/callback" element={<Callback clientId={clientId} redirectUri={redirectUri} />} />
             <Route path="/*" element={<ErrorPage />} />
           </Routes>
           <Footer />

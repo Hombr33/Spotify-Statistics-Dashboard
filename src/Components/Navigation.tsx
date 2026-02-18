@@ -4,10 +4,9 @@ import { FaHome } from 'react-icons/fa';
 import { BarChartIcon, MoonIcon, SunIcon } from '@radix-ui/react-icons';
 
 interface NavigationProps {
-    handleThemeButton: React.MouseEventHandler<HTMLInputElement>
+    handleThemeButton: React.MouseEventHandler<HTMLButtonElement>
     isLightOn?: boolean;
 }
-
 
 function Navigation({ handleThemeButton, isLightOn }: NavigationProps) {
 
@@ -56,7 +55,7 @@ function Navigation({ handleThemeButton, isLightOn }: NavigationProps) {
                     <div className="nav-button">
                         <button
                             className="theme-button"
-                            //={handleThemeButton}
+                            onClick={handleThemeButton}
                         >
                             {isLightOn ? <SunIcon /> : <MoonIcon />}
                         </button>
