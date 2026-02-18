@@ -1,5 +1,5 @@
 
-import { CopyIcon } from '@radix-ui/react-icons';
+//import { CopyIcon } from '@radix-ui/react-icons';
 
 interface SpotifyImages {
 
@@ -32,14 +32,14 @@ function Profile({ ProfileData }: ProfileProps) {
                         Welcome {ProfileData?.display_name || 'user'}
                     </div>
 
-                    <div className="user-small-stats">
+                    {/* <div className="user-small-stats">
                         {ProfileData?.external_urls?.spotify && (
                             <a href={ProfileData.external_urls.spotify} target="_blank" rel="noreferrer">
                                 {ProfileData.external_urls.spotify}
                             </a>
                         )}
                         <CopyIcon />
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className="profile-img">
