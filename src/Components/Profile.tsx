@@ -17,25 +17,16 @@ function Profile() {
 
     const authToken = localStorage.getItem('authToken');
 
-    const fetchSpotifyAccount = async () => {
-
-        try {
-            const response = await fetch('https://spotify-statistics-dashboard.onrender.com/api/fetchAccounts', {
+    async function fetchProfile() {
+      
+            const response = await fetch("https://api.spotify.com/v1/me", {
                 method: "GET",
                 headers: { Authorization: `Bearer ${authToken}` },
             });
-
-
-            console.log("Token being sent:", authToken);
             
-            const data = await response.json();
-
-            setUser(data);
-
-        } catch (error) {
-            console.log(error);
+            const profile_data = await response.json();
+            console.log(profile_data);
         }
-    }
 
     return (
         <section className="Profile">
@@ -65,10 +56,10 @@ function Profile() {
 
                 <span id="stat"><div id="stat-number"> 10 </div> Playlists </span>
 
-                <span id="stat"><div id="stat-number"> 12 </div> Followers </span>
+                <span id="stat"><div id="stat-number">  </div> Followers </span>
 
             </div>
-            <button onClick={fetchSpotifyAccount}> Fetch Spotify account data!  </button>
+            <button onClick={fetchProfile}> Fetch Spotify account data!  </button>
         </section>
     )
 }
