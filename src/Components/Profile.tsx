@@ -15,13 +15,13 @@ function Profile() {
 
     const [user] = useState<UserProfile | null>(null);
 
-    const authToken = localStorage.getItem('authToken');
+    const access_token = localStorage.getItem('access_token');
 
     async function fetchProfile() {
       
             const response = await fetch("https://api.spotify.com/v1/me", {
                 method: "GET",
-                headers: { Authorization: `Bearer ${authToken}` },
+                headers: { Authorization: `Bearer ${access_token}` },
             });
             
             const profile_data = await response.json();
