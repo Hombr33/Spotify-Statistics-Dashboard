@@ -13,7 +13,7 @@ interface UserProfile {
 
 function Profile() {
 
-    const [user, setUser] = useState<UserProfile | null>(null);
+    const [user] = useState<UserProfile | null>(null);
 
     const authToken = localStorage.getItem('authToken');
 
