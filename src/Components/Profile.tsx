@@ -1,11 +1,9 @@
 
 import { CopyIcon } from '@radix-ui/react-icons';
-import { BsPerson } from 'react-icons/bs';
 
+interface SpotifyImages {
 
-interface SpotifyImages{
-
-    url:string;
+    url: string;
     height: number;
     width: number;
 }
@@ -16,7 +14,7 @@ interface ProfileProps {
         display_name: string;
         images: SpotifyImages[];
         followers: number;
-        external_urls: string;
+        external_urls: { spotify: string };
         product: string;
     };
 }
@@ -35,12 +33,17 @@ function Profile({ ProfileData }: ProfileProps) {
                     </div>
 
                     <div className="user-small-stats">
-                     <a> {ProfileData?.external_urls || ''} </a> <CopyIcon/>
+                        {ProfileData?.external_urls?.spotify && (
+                            <a href={ProfileData.external_urls.spotify} target="_blank" rel="noreferrer">
+                                {ProfileData.external_urls.spotify}
+                            </a>
+                        )}
+                        <CopyIcon />
                     </div>
                 </div>
 
                 <div className="profile-img">
-                    {profileImageUrl || <BsPerson style={{ fontSize: '50px' }} />}
+                    <img src={profileImageUrl} />
                 </div>
             </div>
 
