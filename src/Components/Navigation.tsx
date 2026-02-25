@@ -1,7 +1,7 @@
-import { FaChartSimple } from "react-icons/fa6";
+import { FaChartArea, FaChartSimple } from "react-icons/fa6";
 import { Button } from '@mantine/core';
 import { FaHome } from 'react-icons/fa';
-import { BarChartIcon, MoonIcon, SunIcon } from '@radix-ui/react-icons';
+import { MoonIcon, SunIcon } from '@radix-ui/react-icons';
 
 interface NavigationProps {
     handleThemeButton: React.MouseEventHandler<HTMLButtonElement>
@@ -14,12 +14,11 @@ function Navigation({ handleThemeButton, isLightOn }: NavigationProps) {
         <div className="Navigation-container">
             <div className="Navigation">
                 <div className="nav-logo">
-                    <BarChartIcon style={{fontSize: '20px'}}/>
+                    <FaChartArea style={{fontSize: '20px'}}/>
                     Audio <span id="logo-2">Stats</span>
                 </div>
 
                 <div className="nav-buttons">
-
                     <div className="nav-button">
                         <Button
                             color="green.7"

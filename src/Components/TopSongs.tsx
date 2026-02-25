@@ -1,5 +1,6 @@
 
 import './TopSongs.css';
+import './Song.tsx';
 import { FaMusic } from 'react-icons/fa6';
 
 function TopSongs() {
@@ -31,8 +32,7 @@ function TopSongs() {
                 <SongArt />
                 <SongArt />
                 <SongArt />
-                <SongArt />
-
+                
             </div>
         </section>
     )

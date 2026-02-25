@@ -29,7 +29,15 @@ function Profile({ ProfileData }: ProfileProps) {
 
                 <div className="profile-info">
                     <div className="profile-name">
-                        Welcome,  {ProfileData?.display_name || 'user'} 👋
+                        Welcome, {ProfileData?.display_name || 'user'} 👋
+                    </div>
+
+
+                    <div className="profile-img-mobile">
+                        {profileImageUrl ?
+                            <img src={profileImageUrl} alt="profile" width="200" height="200" /> :
+                            <BsPerson />
+                        }
                     </div>
 
                     <div className="user-info-container">
@@ -41,7 +49,6 @@ function Profile({ ProfileData }: ProfileProps) {
                                     {ProfileData.external_urls.spotify}
                                 </a>
                             ) : (
-
                                 <a>
                                     <IoAlertOutline />
                                     Profile link not found
@@ -62,7 +69,6 @@ function Profile({ ProfileData }: ProfileProps) {
                                 </a>
                             )}
                         </div>
-
                     </div>
                 </div>
 
@@ -75,14 +81,23 @@ function Profile({ ProfileData }: ProfileProps) {
             </div>
 
             <div className="profile-stats">
-                <span id="stat"><div id="stat-number"> 500 </div> Total Songs listened </span>
 
-                <span id="stat"><div id="stat-number"> 10 </div> Playlists </span>
+                <div className="stat-item">
+                    <span className="stat-number">0</span>
+                    <span className="stat-text">Playlists</span>
+                </div>
 
-                <span id="stat"><div id="stat-number"> {ProfileData?.followers?.total || '0'} </div> Followers </span>
+                <div className="stat-item">
+                    <span className="stat-number">{ProfileData?.followers?.total || '0'}</span>
+                    <span className="stat-text">Followers</span>
+                </div>
+
+                <div className="stat-item">
+                    <span className="stat-number">50</span>
+                    <span className="stat-text">Songs listened</span>
+                </div>
 
             </div>
-
         </section>
     )
 }
