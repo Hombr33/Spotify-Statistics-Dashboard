@@ -52,6 +52,7 @@ function Main() {
             <div className="top-component">
                 <EarlyBuildWarning />
                 {profileData && <Profile ProfileData={profileData} />}
+
                 <TopSongs />
             </div>
 
@@ -74,7 +75,6 @@ function Main() {
                     <div className="dashboard-component">
                         <div className="component2">
                             <Artists />
-
                         </div>
                     </div>
 

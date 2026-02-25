@@ -3,6 +3,11 @@ import './TopSongs.css';
 import './Song.tsx';
 import { FaMusic } from 'react-icons/fa6';
 
+
+import { Carousel } from '@mantine/carousel';
+import '@mantine/carousel/styles.css';
+
+
 function TopSongs() {
 
 
@@ -25,15 +30,23 @@ function TopSongs() {
         <section className="top-songs">
             <span id="component-heading"> Your most streamed songs this month </span>
 
-            <div className="song-art-grid">
 
-                <SongArt />
-                <SongArt />
-                <SongArt />
-                <SongArt />
-                <SongArt />
-                
-            </div>
+            <Carousel
+                className="top-songs-carousel"
+                slideSize="15%"
+                height={130}
+            >
+                <Carousel.Slide> <SongArt /> </Carousel.Slide>
+                <Carousel.Slide> <SongArt /> </Carousel.Slide>
+                <Carousel.Slide> <SongArt /> </Carousel.Slide>
+                <Carousel.Slide> <SongArt /> </Carousel.Slide>
+                <Carousel.Slide> <SongArt /> </Carousel.Slide>
+                <Carousel.Slide> <SongArt /> </Carousel.Slide>
+                <Carousel.Slide> <SongArt /> </Carousel.Slide>
+                <Carousel.Slide> <SongArt /> </Carousel.Slide>
+
+
+            </Carousel>
         </section>
     )
 }

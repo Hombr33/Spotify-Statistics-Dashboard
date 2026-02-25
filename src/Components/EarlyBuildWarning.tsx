@@ -8,7 +8,7 @@ function EarlyBuildWarning() {
 
         <a className="early-dev-banner" href="/dashboard">
             <IoWarning style={{ alignContent: 'center', color: '#1DB954', fontSize: '25px' }} />
-            <span> App is currently in early stage development. Please bear this in mind when interacting with the app.</span>
+            <span> App is currently in early stage development.  </span>
         </a>
 
     );
