@@ -38,7 +38,7 @@ function RecentlyListened() {
     return (
 
         <section className="recent-widget">
-            <span> Listening History </span>
+            <span id="component-heading"> 🎧 Listening History </span>
 
             <Button
                 color="green.7"
@@ -54,7 +54,6 @@ function RecentlyListened() {
                 {!comments ? (
                     <SongPlaceholder />
                 ) : (
-
                     comments?.map((comment: any, index: number) => (
                         <Song key={index} comment={comment} index={index} />
                     ))

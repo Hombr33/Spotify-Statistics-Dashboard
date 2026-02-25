@@ -6,6 +6,7 @@ import MonthlyActivity from './MonthlyActivity.tsx';
 import RecentlyListened from './RecentlyListened.tsx';
 import EarlyBuildWarning from './EarlyBuildWarning.tsx';
 import { useEffect, useState } from 'react';
+import Toastify from 'toastify-js';
 
 function Main() {
 
@@ -27,6 +28,17 @@ function Main() {
             const profile_data = await response.json();
             setProfileData(profile_data);
             console.log(profile_data);
+
+            Toastify({
+
+                className: "Toast",
+                text: "Successfully Logged in!",
+                duration: 3000,
+                newWindow: false,
+                gravity: "bottom",
+                position: "center",
+
+            }).showToast();
         }
 
         fetchProfile();
@@ -36,6 +48,7 @@ function Main() {
     return (
 
         <div className="Main">
+
             <div className="top-component">
                 <EarlyBuildWarning />
                 {profileData && <Profile ProfileData={profileData} />}

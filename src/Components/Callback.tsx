@@ -1,6 +1,9 @@
 import { useEffect } from "react";
 import { Loader } from "@mantine/core";
 
+//toastify.js
+import "toastify-js/src/toastify.css";
+
 interface CallbackProps {
     clientId: string;
     redirectUri: string;
@@ -62,6 +65,7 @@ function Callback({ clientId, redirectUri }: CallbackProps) {
                 // user goes back to login page...
                 console.error("Token error:", data);
                 window.location.href = "/login";
+
             }
         }
 

@@ -22,7 +22,7 @@ function TopSongs() {
 
     return (
         <section className="top-songs">
-            <span> Your most streamed songs this month </span>
+            <span id="component-heading"> Your most streamed songs this month </span>
 
             <div className="song-art-grid">
 

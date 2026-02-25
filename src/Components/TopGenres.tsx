@@ -42,14 +42,14 @@ function TopGenres() {
 
     return (
         <section className="Posts-widget">
-            <span> Your Top Genres </span>
+            <span id="component-heading"> Top Genres </span>
 
             <RadarChart
-                h={220}
+                h={200}
                 data={data}
                 dataKey="genre"
                 withPolarRadiusAxis
-                series={[{ name: 'streams', color: 'green.6', opacity: 0.2 }]}
+                series={[{ name: 'streams', color: 'green.7', opacity: 0.2 }]}
             />
 
         </section>

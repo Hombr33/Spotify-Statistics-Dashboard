@@ -1,27 +1,30 @@
 
-//import { CopyIcon } from '@radix-ui/react-icons';
+import { CopyIcon } from "@radix-ui/react-icons";
+import { BsPerson } from "react-icons/bs";
 
-interface SpotifyImages {
 
-    url: string;
-    height: number;
-    width: number;
-}
+//Objects are not valid as a React child (found: [missing argument]). 
+// If you meant to render a collection of children, use an array instead.
 
 interface ProfileProps {
     ProfileData: {
-
+        profileImage: Image[];
         display_name: string;
-        images: SpotifyImages[];
-        followers: number;
+        followers: {href: string; total: number};
         external_urls: { spotify: string };
         product: string;
     };
 }
 
+interface Image {
+    url: string;
+    height: number;
+    width: number;
+}
+
 function Profile({ ProfileData }: ProfileProps) {
 
-    const profileImageUrl = ProfileData.images?.[0]?.url;
+    const profileImageUrl = ProfileData.profileImage?.[0]?.url;
 
     return (
         <section className="Profile">
@@ -29,31 +32,35 @@ function Profile({ ProfileData }: ProfileProps) {
 
                 <div className="profile-info">
                     <div className="profile-name">
-                        Welcome {ProfileData?.display_name || 'user'}
+                        Welcome,  {ProfileData?.display_name || 'user'} 👋
                     </div>
 
-                    {/* <div className="user-small-stats">
+                    <div className="user-link">
+                        <CopyIcon />
+
                         {ProfileData?.external_urls?.spotify && (
                             <a href={ProfileData.external_urls.spotify} target="_blank" rel="noreferrer">
                                 {ProfileData.external_urls.spotify}
                             </a>
                         )}
-                        <CopyIcon />
-                    </div> */}
+
+                    </div>
                 </div>
 
                 <div className="profile-img">
-                    <img src={profileImageUrl} />
+                    {profileImageUrl ?
+                        <img src={profileImageUrl} /> :
+                        <BsPerson />
+                    }
                 </div>
             </div>
 
             <div className="profile-stats">
-
                 <span id="stat"><div id="stat-number"> 500 </div> Total Songs listened </span>
 
                 <span id="stat"><div id="stat-number"> 10 </div> Playlists </span>
 
-                <span id="stat"><div id="stat-number"> {ProfileData?.followers || '0'} </div> Followers </span>
+                <span id="stat"><div id="stat-number"> {ProfileData?.followers?.total || '0'} </div> Followers </span>
 
             </div>
 

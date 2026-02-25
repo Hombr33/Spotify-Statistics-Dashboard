@@ -22,12 +22,12 @@ function MonthlyActivity() {
     return (
         <section className="monthly-activity">
 
-            <span>  Monthly Activity </span>
+            <span id="component-heading">  Monthly Activity </span>
 
             <div className="monthly-activity-graph">
 
                 <LineChart
-                    h={220}
+                    h={180}
                     data={data}
                     dataKey="month"
                     curveType="natural"

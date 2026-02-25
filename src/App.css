@@ -46,6 +46,12 @@ body {
   --main-highlight: #1DB954;
 }
 
+.Toast{
+  background-color: var(--background-secondary) !important;
+  color: var(--text-color);
+  box-shadow: none;
+}
+
 .pagination {
   display: flex;
   height: fit-content;
@@ -54,6 +60,13 @@ body {
   align-items: center;
   justify-content: flex-start;
   font-size: 1.0rem;
+}
+
+
+#component-heading {
+  font-size: 1.6rem;
+  padding: 10px;
+  color: var(--text-color);
 }
 
 .loader-container {
@@ -86,11 +99,11 @@ body {
 }
 
 .early-dev-banner {
-  display: inline-flex;
-  width: 100%;
+  display: flex;
+  width: 80%;
   height: fit-content;
   text-align: center;
-  padding: 10px;
+  padding: 5px;
   margin: 0 auto;
   background-color: var(--background-secondary);
   border-radius: 8px;
@@ -216,7 +229,7 @@ body {
   padding: 10px;
   border-radius: 20px;
   background-color: #1DB954;
-  color: whitesmoke;
+  color: var(--text-color);
 }
 
 .theme-button svg {
@@ -274,7 +287,6 @@ body {
   margin: 0 auto;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
   border-radius: 8px;
 }
 
@@ -287,12 +299,7 @@ body {
   height: fit-content;
   margin: 10px;
   border-radius: 8px;
-  padding: 10px;
   color: var(--text-color);
-  font-size: 1.2rem;
-  font-family: 'Figtree', sans-serif;
-  font-weight: 500;
-  padding: 10px;
 }
 
 .component-title {
@@ -314,6 +321,7 @@ body {
 .Dashboard>.dashboard-component:nth-child(1) {
   grid-column: span 1;
   background-color: var(--background-secondary);
+  padding: 5px;
 
 }
 
@@ -405,7 +413,7 @@ body {
   justify-content: flex-start;
   margin-top: 10px;
   border-radius: 12px;
-  padding: 20px;
+  padding: 10px;
 }
 
 .profile-top {
@@ -429,7 +437,7 @@ body {
   width: fit-content;
   align-items: center;
   justify-content: center;
-  padding: 30px;
+  padding: 10px;
   background-color: var(--main-highlight);
   border-radius: 20px;
 }
@@ -439,25 +447,28 @@ body {
   width: 100px;
 }
 
+.profile-img svg {
+  font-size: 5.0rem !important;
+}
+
 .profile-stats {
   display: flex;
   font-size: 1.3rem;
   width: fit-content;
   flex-direction: row;
   background-color: var(--background-secondary);
-  padding: 10px;
+  padding: 5px;
   border-radius: 10px;
 }
 
-.user-small-stats {
+.user-link {
   display: inline-flex;
+  height: 30px;
   align-items: center;
   justify-content: flex-start;
   flex-direction: row;
   width: 100%;
-  font-size: 1.1rem;
-  gap: 0.35rem;
-  padding: 5px 0;
+  font-size: 1.0rem;
   color: var(--main-highlight);
 }
 
@@ -1006,7 +1017,6 @@ body {
     font-size: 1.8rem;
     padding-bottom: 10px;
   }
-
 
   .early-dev-banner {
     display: flex;

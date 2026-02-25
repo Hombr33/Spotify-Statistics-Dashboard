@@ -12,7 +12,7 @@ function Communities() {
 
     return (
         <section className="Communities-widget">
-            <span className="component-title"> Top five Artists </span>
+            <span id="component-heading"> Top five Artists </span>
             <BarChart
                 h={200}
                 data={data}
@@ -20,7 +20,7 @@ function Communities() {
                 orientation="horizontal"
                 yAxisProps={{ width: 40 }}
                 barProps={{ radius: 4 }}
-                series={[{  name: 'Songs', color: 'green.6' }]}
+                series={[{  name: 'Songs', color: 'green.7' }]}
             />
         </section>
     )
