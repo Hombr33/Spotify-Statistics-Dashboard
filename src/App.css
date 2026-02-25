@@ -46,7 +46,7 @@ body {
   --main-highlight: #1DB954;
 }
 
-.Toast{
+.Toast {
   background-color: var(--background-secondary) !important;
   color: var(--text-color);
   box-shadow: none;
@@ -451,25 +451,48 @@ body {
   font-size: 5.0rem !important;
 }
 
+
+.user-info-container{
+  display: flex;
+  flex-direction: row;
+
+}
+
 .profile-stats {
   display: flex;
   font-size: 1.3rem;
   width: fit-content;
+  justify-content: flex-end;
+  align-items: flex-end;
   flex-direction: row;
-  background-color: var(--background-secondary);
   padding: 5px;
   border-radius: 10px;
 }
 
-.user-link {
-  display: inline-flex;
-  height: 30px;
+.user-link a, 
+.user-accountBadge a {
+  display: flex;
+  height: 40px;
   align-items: center;
   justify-content: flex-start;
   flex-direction: row;
-  width: 100%;
+  width: fit-content;
   font-size: 1.0rem;
-  color: var(--main-highlight);
+  color: var(--text-color);
+  background-color: var(--background-secondary);
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 500;
+  margin: 10px;
+  margin-left: 0px
+}
+
+.user-stats svg {
+  font-size: 1.2rem;
+}
+
+.user-link span {
+  padding: 10px;
 }
 
 .user-small-stats a:hover {
@@ -503,15 +526,6 @@ body {
   padding: 10px;
   padding-left: 0px;
   color: var(--text-color);
-}
-
-.accountBadge {
-  display: flex;
-  color: var(--text-color);
-  height: fit-content;
-  width: fit-content;
-  border-radius: 15px;
-  background-color: var(--background-secondary);
 }
 
 .signup-container,
