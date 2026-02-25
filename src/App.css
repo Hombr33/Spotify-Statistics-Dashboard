@@ -489,6 +489,13 @@ body {
 
 .user-stats svg {
   font-size: 1.2rem;
+  padding-right: 10px;
+  color: var(--main-highlight);
+}
+
+.user-link a:hover {
+cursor:pointer;
+text-decoration: underline;
 }
 
 .user-link span {
