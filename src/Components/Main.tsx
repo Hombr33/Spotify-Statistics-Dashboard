@@ -22,7 +22,7 @@ function Main() {
 
         async function fetchMostStreamedSongs() {
 
-            const response = await fetch("https://api.spotify.com/v1/me/top/tracks/time_range=short_term", {
+            const response = await fetch("https://api.spotify.com/v1/me/top/tracks?limit=10&time_range=short_term", {
 
                 method: "GET",
                 headers: { Authorization: `Bearer ${access_token}` },
