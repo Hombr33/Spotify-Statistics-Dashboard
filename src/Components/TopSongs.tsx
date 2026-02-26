@@ -10,7 +10,6 @@ import '@mantine/carousel/styles.css';
 
 function TopSongs() {
 
-
     //Song art component - icon is currently placeholder 
     // and will eventually only show
     // as a backup on case song art cannot be gotten.

@@ -5,7 +5,7 @@ import { IoAlertOutline, IoSparkles } from "react-icons/io5";
 
 interface ProfileProps {
     ProfileData: {
-        profileImage: Image[];
+        images: Image[];
         display_name: string;
         followers: { href: string; total: number };
         external_urls: { spotify: string };
@@ -21,7 +21,8 @@ interface Image {
 
 function Profile({ ProfileData }: ProfileProps) {
 
-    const profileImageUrl = ProfileData.profileImage?.[0]?.url;
+    // pick the first image in the images array (if any)
+    const profileImageUrl = ProfileData?.images?.[0]?.url;
 
     return (
         <section className="Profile">
@@ -31,7 +32,6 @@ function Profile({ ProfileData }: ProfileProps) {
                     <div className="profile-name">
                         Welcome, {ProfileData?.display_name || 'user'} 👋
                     </div>
-
 
                     <div className="profile-img-mobile">
                         {profileImageUrl ?
