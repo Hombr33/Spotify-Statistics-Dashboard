@@ -440,7 +440,7 @@ body {
 }
 
 
-.profile-img {
+.profile-img img {
   display: flex;
   height: 150px;
   width: 150px;
@@ -451,15 +451,9 @@ body {
   font-size: 1.2rem;
 }
 
-.profile-img img {
-  height: auto;
-  width: 100px;
-}
-
 .profile-img svg {
   font-size: 5.0rem !important;
 }
-
 
 .user-info-container {
   display: flex;
