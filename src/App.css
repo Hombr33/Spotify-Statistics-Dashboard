@@ -439,17 +439,15 @@ body {
   justify-content: flex-start;
 }
 
-
 .profile-img img {
   display: flex;
   height: 200px;
   width: 200px;
   align-items: center;
   justify-content: center;
-  background-color: var(--main-highlight);
+  background-color: var(--background-secondary);
   border-radius: 100px;
   font-size: 1.2rem;
-  padding: 1px;
 }
 
 .profile-img svg {
@@ -1051,6 +1049,7 @@ body {
     width: 100%;
   }
 
+  .profile-img-mobile img,
   .profile-img-mobile svg {
     display: block;
     background-color: var(--main-highlight);
@@ -1132,13 +1131,17 @@ body {
     flex-direction: column;
   }
 
-
   .user-link,
   .user-accountBadge {
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 50px;
+  }
+
+  .user-link a,
+  .user-accountBadge a {
+    font-size: 0.9rem;
   }
 
   .Dashboard>.dashboard-component:nth-child(3) {
