@@ -997,7 +997,7 @@ body {
   .accounts-button a svg,
   .home-button a svg,
   .dashboard-button a svg {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .accounts-button {
@@ -1005,7 +1005,7 @@ body {
   }
 
   .navbar-mobile {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
   }
 
   .nav-hamburger {

@@ -8,7 +8,17 @@ import { Carousel } from '@mantine/carousel';
 import '@mantine/carousel/styles.css';
 
 
-function TopSongs() {
+// interface TopSongsProps {
+
+//     //  MostStreamedSongs: {
+//     //     href: string;
+        
+//     // };
+// }
+
+
+
+function TopSongs()  {
 
     //Song art component - icon is currently placeholder 
     // and will eventually only show

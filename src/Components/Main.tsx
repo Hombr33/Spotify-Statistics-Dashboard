@@ -15,8 +15,23 @@ function Main() {
     const access_token = localStorage.getItem('access_token');
 
     const [profileData, setProfileData] = useState(null);
+    const [mostStreamedSongs, setMostStreamedSongs] = useState(null);
 
     useEffect(() => {
+
+        async function fetchMostStreamedSongs() {
+
+            const response = await fetch("https://api.spotify.com/v1/me/top/tracks/time_range=short_term", {
+
+                method: "GET",
+                headers: { Authorization: `Bearer ${access_token}` },
+            });
+
+            const MSS_data = await response.json();
+            setMostStreamedSongs(MSS_data);
+            console.log(MSS_data);
+        }
+
 
         async function fetchProfile() {
 
@@ -42,6 +57,7 @@ function Main() {
         }
 
         fetchProfile();
+        fetchMostStreamedSongs();
 
     }, [access_token])  // run fetchProfile if access_token changes.
 
@@ -60,7 +76,7 @@ function Main() {
 
                 <div className="dashboard-component">
                     <div className="component0">
-                        <MonthlyActivity />
+                        <MonthlyActivity  />
                     </div>
                 </div>
 
