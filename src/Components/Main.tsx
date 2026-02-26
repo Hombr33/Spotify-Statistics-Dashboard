@@ -17,6 +17,7 @@ function Main() {
     const [profileData, setProfileData] = useState(null);
     const [mostStreamedSongs, setMostStreamedSongs] = useState(null);
 
+
     useEffect(() => {
 
         async function fetchMostStreamedSongs() {
@@ -69,7 +70,7 @@ function Main() {
                 <EarlyBuildWarning />
                 {profileData && <Profile ProfileData={profileData} />}
 
-                <TopSongs />
+                {mostStreamedSongs && <TopSongs MostStreamedSongs={mostStreamedSongs}/> }
             </div>
 
             <div className="dashboard-container">

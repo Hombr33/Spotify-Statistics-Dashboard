@@ -8,17 +8,11 @@ import { Carousel } from '@mantine/carousel';
 import '@mantine/carousel/styles.css';
 
 
-// interface TopSongsProps {
+interface TopSongsProps {
+    MostStreamedSongs: any;
+}
 
-//     //  MostStreamedSongs: {
-//     //     href: string;
-        
-//     // };
-// }
-
-
-
-function TopSongs()  {
+function TopSongs({ MostStreamedSongs }: TopSongsProps) {
 
     //Song art component - icon is currently placeholder 
     // and will eventually only show
@@ -39,6 +33,8 @@ function TopSongs()  {
         <section className="top-songs">
             <span id="component-heading"> Your most streamed songs this month </span>
 
+            {/* optionally show href to use the prop */}
+            {MostStreamedSongs?.href && <div>{MostStreamedSongs.href}</div>}
 
             <Carousel
                 className="top-songs-carousel"
