@@ -1,7 +1,6 @@
 
 import { CopyIcon } from "@radix-ui/react-icons";
-import { BsPerson } from "react-icons/bs";
-import { IoAlertOutline, IoSparkles } from "react-icons/io5";
+import { IoAlertOutline, IoPersonCircle, IoSparkles } from "react-icons/io5";
 
 interface ProfileProps {
     ProfileData: {
@@ -36,7 +35,7 @@ function Profile({ ProfileData }: ProfileProps) {
                     <div className="profile-img-mobile">
                         {profileImageUrl ?
                             <img src={profileImageUrl} alt="profile" width="200" height="200" /> :
-                            <BsPerson />
+                            <IoPersonCircle />
                         }
                     </div>
 
@@ -75,7 +74,7 @@ function Profile({ ProfileData }: ProfileProps) {
                 <div className="profile-img">
                     {profileImageUrl ?
                         <img src={profileImageUrl} alt="profile" width="200" height="200" /> :
-                        <BsPerson />
+                        <IoPersonCircle />
                     }
                 </div>
             </div>
