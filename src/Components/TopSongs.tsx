@@ -35,7 +35,6 @@ function TopSongs({ MostStreamedSongs }: TopSongsProps) {
 
                 <span className="song-name"> {imageName} : Song name not found. </span>
             </div>
-
         );
     }
 
@@ -46,7 +45,7 @@ function TopSongs({ MostStreamedSongs }: TopSongsProps) {
             <Carousel
                 className="top-songs-carousel"
                 slideSize="10%"
-                height={150}
+                height={180}
             >
                 {MostStreamedSongs?.items?.map((item, key) => {
                     const imageUrl = item.album.images[0]?.url;
