@@ -43,9 +43,13 @@
 
 .song-details{
     display: flex;
-    flex: column;
+    flex-direction: column;
     width: 100%;
     padding-top: 10px;
+}
+
+.song-details svg{
+    color: var(--main-highlight);
 }
 
 .song-container{
