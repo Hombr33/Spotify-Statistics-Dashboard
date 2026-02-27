@@ -44,7 +44,6 @@ function TopSongs({ MostStreamedSongs }: TopSongsProps) {
                 height={130}
             >
                 {MostStreamedSongs?.items?.map((item, key) => {
-                    // extract first image URL from the album data
                     const imageUrl = item.album.images[0]?.url;
                     return (
                         <Carousel.Slide key={key}>
