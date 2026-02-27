@@ -1,59 +1,62 @@
 
 import './TopSongs.css';
-import './Song.tsx';
 import { FaMusic } from 'react-icons/fa6';
-
-
 import { Carousel } from '@mantine/carousel';
 import '@mantine/carousel/styles.css';
 
+// simplified Spotify types for album images
+interface SpotifyImage {
+    height: number;
+    width: number;
+    url: string;
+}
+
+interface AlbumImages {
+    album: { images: SpotifyImage[] };
+}
 
 interface TopSongsProps {
-    MostStreamedSongs: any;
+    MostStreamedSongs: {
+        href?: string;
+        items: AlbumImages[];
+    };
 }
 
 function TopSongs({ MostStreamedSongs }: TopSongsProps) {
 
-    //Song art component - icon is currently placeholder 
-    // and will eventually only show
-    // as a backup on case song art cannot be gotten.
-
-    function SongArt() {
-
+    function SongArt({ imageUrl }: { imageUrl?: string }) {
         return (
-            <>
-                <div className="song-art">
-                    <FaMusic />
-                </div>
-            </>
-        )
+            <div className="song-art">
+                {imageUrl ? <img src={imageUrl} alt="album art" /> : <FaMusic />}
+            </div>
+        );
     }
 
     return (
         <section className="top-songs">
             <span id="component-heading"> Your most streamed songs this month </span>
 
-            {/* optionally show href to use the prop */}
-            {MostStreamedSongs?.href && <div>{MostStreamedSongs.href}</div>}
+            {MostStreamedSongs?.href && <div> {MostStreamedSongs.href} </div>}
 
             <Carousel
                 className="top-songs-carousel"
                 slideSize="15%"
                 height={130}
             >
-                <Carousel.Slide> <SongArt /> </Carousel.Slide>
-                <Carousel.Slide> <SongArt /> </Carousel.Slide>
-                <Carousel.Slide> <SongArt /> </Carousel.Slide>
-                <Carousel.Slide> <SongArt /> </Carousel.Slide>
-                <Carousel.Slide> <SongArt /> </Carousel.Slide>
-                <Carousel.Slide> <SongArt /> </Carousel.Slide>
-                <Carousel.Slide> <SongArt /> </Carousel.Slide>
-                <Carousel.Slide> <SongArt /> </Carousel.Slide>
-
+                {MostStreamedSongs?.items?.map((item, key) => {
+                    // extract first image URL from the album data
+                    const imageUrl = item.album.images[0]?.url;
+                    return (
+                        <Carousel.Slide key={key}>
+                            <SongArt imageUrl={imageUrl} />
+                        </Carousel.Slide>
+                    );
+                })}
 
             </Carousel>
-        </section>
+        </section >
     )
 }
+
 
 export default TopSongs;
