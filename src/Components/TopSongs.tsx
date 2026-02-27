@@ -3,6 +3,7 @@ import './TopSongs.css';
 import { FaMusic } from 'react-icons/fa6';
 import { Carousel } from '@mantine/carousel';
 import '@mantine/carousel/styles.css';
+import { BsPerson } from 'react-icons/bs';
 
 // simplified Spotify types for album images
 interface SpotifyImage {
@@ -11,7 +12,7 @@ interface SpotifyImage {
     url: string;
 }
 
-interface Artists{
+interface Artists {
     href: string;
     id: number;
     name: string;
@@ -33,14 +34,16 @@ interface TopSongsProps {
 
 function TopSongs({ MostStreamedSongs }: TopSongsProps) {
 
-    function Song({ imageUrl, imageName, imageArtists, songUrl }: { imageUrl?: string, imageName?: string, imageArtists?: string, songUrl: string}) {
+    function Song({ imageUrl, imageName, imageArtists, songUrl }: { imageUrl?: string, imageName?: string, imageArtists?: string, songUrl: string }) {
         return (
             <div className="song-container">
                 <a className="song-art" href={songUrl}>
                     {imageUrl ? <img src={imageUrl} alt="album art" /> : <FaMusic />}
                 </a>
 
-                <span className="song-details"> {imageName} {imageArtists} </span>
+                <span className="song-details">
+                    <span className="song-name"> <FaMusic/> {imageName} </span>
+                    <span className="song-artist"><BsPerson/> {imageArtists} </span> </span>
             </div>
         );
     }
@@ -62,7 +65,7 @@ function TopSongs({ MostStreamedSongs }: TopSongsProps) {
 
                     return (
                         <Carousel.Slide key={key}>
-                            <Song imageUrl={imageUrl} imageName={imageName} imageArtists={imageArtists} songUrl={songUrl}/>
+                            <Song imageUrl={imageUrl} imageName={imageName} imageArtists={imageArtists} songUrl={songUrl} />
                         </Carousel.Slide>
                     );
                 })}
