@@ -1,4 +1,4 @@
-import { LineChart } from '@mantine/charts';
+import { BarChart } from '@mantine/charts';
 
 function MonthlyActivity() {
 
@@ -16,7 +16,6 @@ function MonthlyActivity() {
         { month: 'October', Songs: 6 },
         { month: 'November', Songs: 3 },
         { month: 'December', Songs: 62 },
-
     ]
 
     return (
@@ -26,15 +25,15 @@ function MonthlyActivity() {
 
             <div className="monthly-activity-graph">
 
-                <LineChart
+                <BarChart
                     h={180}
                     data={data}
                     dataKey="month"
-                    curveType="natural"
+                    yAxisProps={{ width: 40 }}
+                    barProps={{ radius: 4 }}
+                    series={[{ name: 'Songs', color: 'green.7' }]}
                     tickLine="x"
-                    series={[{ name: 'Songs', label: 'Songs listend', color: 'green.6' }]}
                 />
-
             </div>
 
         </section>

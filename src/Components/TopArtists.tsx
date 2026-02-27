@@ -17,7 +17,7 @@ function Communities() {
                 h={200}
                 data={data}
                 dataKey="community"
-                orientation="horizontal"
+                orientation="vertical"
                 yAxisProps={{ width: 40 }}
                 barProps={{ radius: 4 }}
                 series={[{  name: 'Songs', color: 'green.7' }]}

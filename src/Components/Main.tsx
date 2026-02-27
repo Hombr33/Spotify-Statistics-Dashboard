@@ -1,6 +1,6 @@
 import Profile from './Profile.tsx';
 import TopGenres from './TopGenres.tsx';
-import Artists from './Artists.tsx';
+import Artists from './TopArtists.tsx';
 import TopSongs from './TopSongs.tsx'
 import MonthlyActivity from './MonthlyActivity.tsx';
 import RecentlyListened from './RecentlyListened.tsx';
