@@ -12,19 +12,18 @@
     justify-content: center;
 }
 
-.top-songs-carosel {
+.top-songs-carousel {
     display: flex;
     flex-direction: row;
     width: 100%;
     overflow: hidden;
-
 }
 
 .song-art img{
     display: flex;
     width: 100%;
-    height: 150px;
-    width: 150px;
+    height: 120px;
+    width: 120px;
     justify-content: center;
     align-items: center;
     background-color: var(--background-secondary);
@@ -42,11 +41,11 @@
     font-size: 4rem;
 }
 
-
-.song-name{
-
+.song-details{
     display: flex;
     width: 100%;
+    padding: 10px;
+
 }
 
 .song-container{

@@ -11,10 +11,16 @@ interface SpotifyImage {
     url: string;
 }
 
+interface Artists{
+    href: string;
+    id: number;
+    name: string;
+}
 
 interface Song {
     name: string;
     album: { images: SpotifyImage[] };
+    artists: Artists[];
 }
 
 interface TopSongsProps {
@@ -26,14 +32,14 @@ interface TopSongsProps {
 
 function TopSongs({ MostStreamedSongs }: TopSongsProps) {
 
-    function Song({ imageUrl, imageName }: { imageUrl?: string, imageName?: string }) {
+    function Song({ imageUrl, imageName, imageArtists }: { imageUrl?: string, imageName?: string, imageArtists?: string}) {
         return (
             <div className="song-container">
                 <div className="song-art">
                     {imageUrl ? <img src={imageUrl} alt="album art" /> : <FaMusic />}
                 </div>
 
-                <span className="song-name"> {imageName} : Song name not found. </span>
+                <span className="song-details"> {imageName} {imageArtists}</span>
             </div>
         );
     }
@@ -50,9 +56,10 @@ function TopSongs({ MostStreamedSongs }: TopSongsProps) {
                 {MostStreamedSongs?.items?.map((item, key) => {
                     const imageUrl = item.album.images[0]?.url;
                     const imageName = item.name;
+                    const imageArtists = item.artists[0]?.name;
                     return (
                         <Carousel.Slide key={key}>
-                            <Song imageUrl={imageUrl} imageName={imageName} />
+                            <Song imageUrl={imageUrl} imageName={imageName} imageArtists={imageArtists}/>
                         </Carousel.Slide>
                     );
                 })}
