@@ -40,7 +40,7 @@ function Login({clientId, redirectUri}:loginProps) {
 
         // get request to the authorization endpoint
 
-        const scope = 'user-read-private user-read-email user-personalized user-library-read user-read-recently-played user-top-read user-follow-read user-read-playback-position playlist-read-private user-read-currently-playing';
+        const scope = 'user-read-private user-read-email user-library-read user-read-recently-played user-top-read user-follow-read user-read-playback-position playlist-read-private user-read-currently-playing';
         const authUrl = new URL("https://accounts.spotify.com/authorize")
 
         localStorage.setItem('code_verifier', codeVerifier);
