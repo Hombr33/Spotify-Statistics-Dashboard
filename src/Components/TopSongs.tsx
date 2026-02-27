@@ -11,24 +11,31 @@ interface SpotifyImage {
     url: string;
 }
 
-interface AlbumImages {
+
+interface Song {
+    name: string;
     album: { images: SpotifyImage[] };
 }
 
 interface TopSongsProps {
     MostStreamedSongs: {
         href?: string;
-        items: AlbumImages[];
+        items: Song[];
     };
 }
 
 function TopSongs({ MostStreamedSongs }: TopSongsProps) {
 
-    function SongArt({ imageUrl }: { imageUrl?: string }) {
+    function Song({ imageUrl, imageName }: { imageUrl?: string, imageName?: string }) {
         return (
-            <div className="song-art">
-                {imageUrl ? <img src={imageUrl} alt="album art" /> : <FaMusic />}
+            <div className="song-container">
+                <div className="song-art">
+                    {imageUrl ? <img src={imageUrl} alt="album art" /> : <FaMusic />}
+                </div>
+
+                <span className="song-name"> {imageName} : Song name not found. </span>
             </div>
+
         );
     }
 
@@ -36,18 +43,17 @@ function TopSongs({ MostStreamedSongs }: TopSongsProps) {
         <section className="top-songs">
             <span id="component-heading"> Your most streamed songs this month </span>
 
-            {MostStreamedSongs?.href && <div> {MostStreamedSongs.href} </div>}
-
             <Carousel
                 className="top-songs-carousel"
-                slideSize="15%"
-                height={130}
+                slideSize="10%"
+                height={150}
             >
                 {MostStreamedSongs?.items?.map((item, key) => {
                     const imageUrl = item.album.images[0]?.url;
+                    const imageName = item.name;
                     return (
                         <Carousel.Slide key={key}>
-                            <SongArt imageUrl={imageUrl} />
+                            <Song imageUrl={imageUrl} imageName={imageName} />
                         </Carousel.Slide>
                     );
                 })}
