@@ -51,7 +51,7 @@ function TopSongs({ MostStreamedSongs }: TopSongsProps) {
             <Carousel
                 className="top-songs-carousel"
                 slideSize="10%"
-                height={180}
+                height={200}
             >
                 {MostStreamedSongs?.items?.map((item, key) => {
                     const imageUrl = item.album.images[0]?.url;
