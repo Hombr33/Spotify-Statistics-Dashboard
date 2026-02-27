@@ -1178,6 +1178,7 @@ body {
     width: fit-content;
     height: 150px !important;
     font-size: 1.0rem !important;
+    margin: 10px;
   }
 
   .Front-page {
