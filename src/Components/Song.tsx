@@ -15,7 +15,7 @@ function Song({ name, played_at, image, artists }: SongProps): JSX.Element {
     return (
         <section className="song">
 
-            {<span className="song_art"> <img src={image} /> </span>}
+            {<span className="song-picture"> <img src={image} /> </span>}
 
             <span className="song_info">
 
@@ -27,7 +27,7 @@ function Song({ name, played_at, image, artists }: SongProps): JSX.Element {
                     <span id="artist-name">
                         {artists}
                     </span>
-                    
+
                 </span>
 
                 <span id="comment-body">

@@ -697,8 +697,9 @@ body {
 .song_art {
   display: flex;
   justify-content: flex-start;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
+  margin: 10px;
   border-radius: 8px;
   font-size: 1.0rem;
   background-color: var(--background-secondary);
@@ -708,6 +709,7 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 8px;
+
 }
 
 .song_info {
@@ -731,6 +733,10 @@ body {
 #link-title {
   display: flex;
   font-size: 1.2rem;
+}
+
+#artist-name{
+  font-size: 1.1rem;
 }
 
 #comment-body {
@@ -1200,7 +1206,6 @@ body {
   }
 
   .Front-page {
-
     display: flex;
     flex-direction: column;
     height: fit-content;
