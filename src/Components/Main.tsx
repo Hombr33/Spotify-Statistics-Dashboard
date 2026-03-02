@@ -16,7 +16,7 @@ function Main() {
 
     const [profileData, setProfileData] = useState(null);
     const [mostStreamedSongs, setMostStreamedSongs] = useState(null);
-
+    const [RecentlyListened_data, setRecentlyListened] = useState(null);
 
     useEffect(() => {
 
@@ -31,6 +31,20 @@ function Main() {
             const MSS_data = await response.json();
             setMostStreamedSongs(MSS_data);
             console.log(MSS_data);
+        }
+
+        async function fetchRecentlyListened() {
+
+            const response = await fetch("https://api.spotify.com/v1/me/player/recently-played?limit=30", {
+
+                method: "GET",
+                headers: {Authorization: `Bearer ${access_token}` },
+            });
+
+            const RecentlyListened_data = await response.json();
+            setRecentlyListened(RecentlyListened_data);
+            console.log(RecentlyListened_data);
+
         }
 
 
@@ -59,6 +73,7 @@ function Main() {
 
         fetchProfile();
         fetchMostStreamedSongs();
+        fetchRecentlyListened();
 
     }, [access_token])  // run fetchProfile if access_token changes.
 
@@ -97,7 +112,7 @@ function Main() {
 
                     <div className="dashboard-component">
                         <div className="component3">
-                            <RecentlyListened />
+                            {RecentlyListened_data && <RecentlyListened RecentlyListenedData={RecentlyListened_data}/> }
                         </div>
 
                     </div>

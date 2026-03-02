@@ -1,63 +1,44 @@
-import { useState } from "react";
 import Song from './Song.tsx';
-import SongPlaceholder from "./SongPlaceholder.tsx";
-
-import { Button } from '@mantine/core';
 
 import { Pagination } from "@mantine/core";
 
-interface Comments {
 
-    data: {
-        comments: {
-            link_title: string;
-            body: string;
-        }
+interface album {
+
+    total_tracks: number;
+    name: number;
+    played_at: string;
+}
+
+interface ItemsArray {
+    track: { album: album; };
+}
+
+interface RecentlyListenedProps {
+
+    RecentlyListenedData: {
+
+        href: string;
+        items: ItemsArray[];
     }
 }
 
-function RecentlyListened() {
-
-    const [comments, setComments] = useState<Comments[] | null>(null);
-
-    const fetchRedditComments = async () => {
-
-        try {
-            const response = await fetch('/api/fetchTopArtists');
-            const json = await response.json();
-
-            const comments = json.data.children.map((child: { data: any; }) => child.data);
-            setComments(comments);
-            console.log(comments);
-
-        } catch (e) {
-            console.log(e);
-        }
-    }
+function RecentlyListened({ RecentlyListenedData }: RecentlyListenedProps) {
 
     return (
 
         <section className="recent-widget">
             <span id="component-heading"> 🎧 Listening History </span>
 
-            <Button
-                color="green.7"
-                w="200"
-                style={{
-                    margin: '10px'
-                }}
-
-                onClick={fetchRedditComments}> Fetch Comments </Button>
-
             <div className="recent-grid">
+                
+                {RecentlyListenedData?.items?.map((item, key) => (
 
-                {!comments ? (
-                    <SongPlaceholder />
-                ) : (
-                    comments?.map((comment: any, index: number) => (
-                        <Song key={index} comment={comment} index={index} />
-                    ))
-                )}
+                    <Song
+                        key={key}
+                        SongAmount={item?.track?.album?.total_tracks}
+                    />
+                ))}
             </div>
 
             <div className="pagination">

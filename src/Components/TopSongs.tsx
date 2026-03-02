@@ -64,7 +64,7 @@ function TopSongs({ MostStreamedSongs }: TopSongsProps) {
                             const imageUrl = item.album.images[0]?.url;
                             const imageName = item.name;
                             const imageArtists = item.artists[0]?.name;
-                            const songUrl = item.external_urls.spotify; 
+                            const songUrl = item.external_urls.spotify;
 
                             return (
                                 <Carousel.Slide key={key}>
