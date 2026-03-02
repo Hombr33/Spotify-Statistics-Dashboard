@@ -705,7 +705,7 @@ body {
   background-color: var(--background-secondary);
 }
 
-.song_art img {
+.song-picture img {
   width: 100%;
   height: 100%;
   border-radius: 8px;
