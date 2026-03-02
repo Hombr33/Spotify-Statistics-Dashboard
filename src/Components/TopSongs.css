@@ -44,8 +44,9 @@
     display: inline-flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
+    background-color: var(--background-secondary);
     padding-top: 10px;
     color: var(--text-color);
 }

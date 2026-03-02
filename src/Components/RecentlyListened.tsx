@@ -1,28 +1,31 @@
 import Song from './Song.tsx';
-
 import { Pagination } from "@mantine/core";
 
+interface ImageObject {
+    height: number;
+    url: string;
+    width: number;
+}
 
-interface album {
+interface Album {
+    images: ImageObject[];
+}
 
-    total_tracks: number;
-    name: number;
+interface Track {
+    name: string;
+    album: Album;
+}
+
+interface Item {
+    track: Track;
     played_at: string;
 }
 
-interface ItemsArray {
-    track: { album: album; };
-}
-
 interface RecentlyListenedProps {
-
     RecentlyListenedData: {
-
-        href: string;
-        items: ItemsArray[];
-    }
+        items: Item[];
+    };
 }
-
 function RecentlyListened({ RecentlyListenedData }: RecentlyListenedProps) {
 
     return (
@@ -30,13 +33,18 @@ function RecentlyListened({ RecentlyListenedData }: RecentlyListenedProps) {
         <section className="recent-widget">
             <span id="component-heading"> 🎧 Listening History </span>
 
+            Showing {RecentlyListened?.length} recent tracks.
+
             <div className="recent-grid">
-                
-                {RecentlyListenedData?.items?.map((item, key) => (
+
+                {RecentlyListenedData?.items?.map((items, key) => (
 
                     <Song
                         key={key}
-                        SongAmount={item?.track?.album?.total_tracks}
+                        played_at={items.played_at}
+                        name={items.track.name}
+                        //images={items.track.album.images}
+
                     />
                 ))}
             </div>
