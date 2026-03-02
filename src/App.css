@@ -694,7 +694,7 @@ body {
   margin-top: 5px;
 }
 
-.song_art {
+.song-picture {
   display: flex;
   justify-content: flex-start;
   width: 80px;
@@ -709,7 +709,6 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 8px;
-
 }
 
 .song_info {
