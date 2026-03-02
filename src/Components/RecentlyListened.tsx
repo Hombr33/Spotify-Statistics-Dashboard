@@ -33,7 +33,7 @@ function RecentlyListened({ RecentlyListenedData }: RecentlyListenedProps) {
         <section className="recent-widget">
             <span id="component-heading"> 🎧 Listening History </span>
 
-            Showing {RecentlyListened?.length} recent tracks.
+            Showing {RecentlyListenedData?.items?.length ?? 0 } recent tracks.
 
             <div className="recent-grid">
 
