@@ -5,16 +5,16 @@ interface SongProps {
     key: number;
     played_at: string;
     name: string;
-
+    image: string; 
 }
 // work out conditional rendering for each element.
 
-function Song({name, played_at }: SongProps): JSX.Element {
+function Song({name, played_at, image }: SongProps): JSX.Element {
 
     return (
         <section className="song">
 
-            {/* <span className="song_art"> <img src={images[0].url?} /> </span> */}
+            { <span className="song_art"> <img src={image} /> </span> }
 
             <span className="song_info">
 

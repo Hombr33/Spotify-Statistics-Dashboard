@@ -33,7 +33,9 @@ function RecentlyListened({ RecentlyListenedData }: RecentlyListenedProps) {
         <section className="recent-widget">
             <span id="component-heading"> 🎧 Listening History </span>
 
-            Showing {RecentlyListenedData?.items?.length ?? 0 } recent tracks.
+            <div className="history-count">
+                Showing {RecentlyListenedData?.items?.length ?? 0} recent tracks.
+            </div>
 
             <div className="recent-grid">
 
@@ -43,7 +45,7 @@ function RecentlyListened({ RecentlyListenedData }: RecentlyListenedProps) {
                         key={key}
                         played_at={items.played_at}
                         name={items.track.name}
-                        //images={items.track.album.images}
+                        image={items.track.album.images[0]?.url}
 
                     />
                 ))}

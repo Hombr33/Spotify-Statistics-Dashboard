@@ -669,6 +669,14 @@ body {
   padding: 10px;
 }
 
+.history-count{
+  padding: 10px;
+  display: flex;
+  width: 100%;
+  font-size: 1.2rem;
+  color: var(--main-highlight);
+}
+
 .recent-grid {
   display: flex;
   flex-direction: column;
@@ -682,6 +690,7 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
   font-size: 1.0rem;
+  margin-top: 5px;
 }
 
 .song_art {
