@@ -5,16 +5,17 @@ interface SongProps {
     key: number;
     played_at: string;
     name: string;
-    image: string; 
+    image: string;
+    artists: string;
 }
 // work out conditional rendering for each element.
 
-function Song({name, played_at, image }: SongProps): JSX.Element {
+function Song({ name, played_at, image, artists }: SongProps): JSX.Element {
 
     return (
         <section className="song">
 
-            { <span className="song_art"> <img src={image} /> </span> }
+            {<span className="song_art"> <img src={image} /> </span>}
 
             <span className="song_info">
 
@@ -22,6 +23,11 @@ function Song({name, played_at, image }: SongProps): JSX.Element {
                     <span id="link-title">
                         {name}
                     </span>
+
+                    <span id="artist-name">
+                        {artists}
+                    </span>
+                    
                 </span>
 
                 <span id="comment-body">

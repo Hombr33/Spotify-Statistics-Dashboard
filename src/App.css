@@ -687,6 +687,7 @@ body {
 .song {
   display: flex;
   width: 100%;
+  height: 80px;
   justify-content: flex-start;
   align-items: flex-start;
   font-size: 1.0rem;
@@ -712,8 +713,9 @@ body {
 .song_info {
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
   width: 100%;
+  height: 100%;
   padding: 10px;
   margin-left: 10px;
   background-color: var(--background);
@@ -732,10 +734,17 @@ body {
 }
 
 #comment-body {
-  width: 80%;
+  width: fit-content;
   display: flex;
+  color: var(--main-highlight);
 }
 
+.compoenent-top{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: fit-content;
+}
 
 .ErrorPage {
   display: flex;

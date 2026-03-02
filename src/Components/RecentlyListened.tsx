@@ -7,6 +7,10 @@ interface ImageObject {
     width: number;
 }
 
+interface ArtistsArray {
+    name: string;
+}
+
 interface Album {
     images: ImageObject[];
 }
@@ -14,6 +18,8 @@ interface Album {
 interface Track {
     name: string;
     album: Album;
+    artists: ArtistsArray[];
+
 }
 
 interface Item {
@@ -31,10 +37,12 @@ function RecentlyListened({ RecentlyListenedData }: RecentlyListenedProps) {
     return (
 
         <section className="recent-widget">
-            <span id="component-heading"> 🎧 Listening History </span>
+            <div className="component-top">
+                <span id="component-heading"> 🎧 Listening History </span>
 
-            <div className="history-count">
-                Showing {RecentlyListenedData?.items?.length ?? 0} recent tracks.
+                <div className="history-count">
+                    Showing {RecentlyListenedData?.items?.length ?? 0} recent tracks.
+                </div>
             </div>
 
             <div className="recent-grid">
@@ -46,6 +54,7 @@ function RecentlyListened({ RecentlyListenedData }: RecentlyListenedProps) {
                         played_at={items.played_at}
                         name={items.track.name}
                         image={items.track.album.images[0]?.url}
+                        artists={items.track.artists[0].name}
 
                     />
                 ))}

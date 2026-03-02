@@ -46,7 +46,6 @@
     justify-content: flex-start;
     align-items: flex-start;
     width: 100%;
-    background-color: var(--background-secondary);
     padding-top: 10px;
     color: var(--text-color);
 }
