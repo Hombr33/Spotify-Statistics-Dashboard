@@ -27,7 +27,6 @@ function Song({ name, played_at, image, artists }: SongProps): JSX.Element {
                     <span id="artist-name">
                         {artists}
                     </span>
-
                 </span>
 
                 <span id="comment-body">
