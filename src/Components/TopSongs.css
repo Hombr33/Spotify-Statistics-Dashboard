@@ -11,6 +11,7 @@
     justify-content: center;
 }
 
+
 .top-songs-carousel {
     display: flex;
     flex-direction: row;
@@ -38,6 +39,18 @@
 .song-art svg {
     color: var(--main-highlight);
     font-size: 4rem;
+}
+
+
+.song-name{
+    display: flex;
+    font-size: 1.5rem
+}
+
+.song-artist{
+    display: flex;
+    font-size: 0.9rem;
+    color: grey;
 }
 
 .song-details{

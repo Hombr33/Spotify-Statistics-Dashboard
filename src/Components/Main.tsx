@@ -17,8 +17,26 @@ function Main() {
     const [profileData, setProfileData] = useState(null);
     const [mostStreamedSongs, setMostStreamedSongs] = useState(null);
     const [RecentlyListened_data, setRecentlyListened] = useState(null);
+    const [mostStreamed_Artists, setMostStreamedArtists] = useState(null);
 
     useEffect(() => {
+
+
+        async function fetchMostStreamedArtists() {
+
+            const response = await fetch("https://api.spotify/com/v1/me/top/artists?limit=5&time_range=short_term ", {
+
+                method: "GET",
+                headers: { Authorization: `Bearer ${access_token}` },
+
+
+            });
+
+            const Artist_data = await response.json();
+            setMostStreamedArtists(Artist_data);
+            console.log(Artist_data);
+
+        }
 
         async function fetchMostStreamedSongs() {
 
@@ -71,6 +89,7 @@ function Main() {
         }
 
         fetchProfile();
+        fetchMostStreamedArtists();
         fetchMostStreamedSongs();
         fetchRecentlyListened();
 
@@ -105,7 +124,7 @@ function Main() {
 
                     <div className="dashboard-component">
                         <div className="component2">
-                            <Artists />
+                    {mostStreamed_Artists &&  <Artists MostStreamedArtists={mostStreamed_Artists}/> }
                         </div>
                     </div>
 

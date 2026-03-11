@@ -3,10 +3,8 @@ import './TopSongs.css';
 import { FaMusic } from 'react-icons/fa6';
 import { Carousel } from '@mantine/carousel';
 import '@mantine/carousel/styles.css';
-import { IoMdPerson } from 'react-icons/io';
 import CarouselErrorMessage from './Error_Components/CarouselErorr';
 
-// simplified Spotify types for album images
 interface SpotifyImage {
     height: number;
     width: number;
@@ -43,8 +41,9 @@ function TopSongs({ MostStreamedSongs }: TopSongsProps) {
                 </a>
 
                 <span className="song-details">
-                    <span className="song-name"> <FaMusic /> {imageName} </span>
-                    <span className="song-artist"><IoMdPerson /> {imageArtists} </span> </span>
+                    <span className="song-name"> {imageName} </span>
+                    <span className="song-artist"> {imageArtists} </span>
+                </span>
             </div>
         );
     }
