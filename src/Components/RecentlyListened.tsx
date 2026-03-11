@@ -45,7 +45,7 @@ function RecentlyListened({ RecentlyListenedData }: RecentlyListenedProps) {
             minute: "2-digit",
             hour: "2-digit",
             day: "numeric",
-            month: "short",
+            month: "long",
             weekday:"long",
             year:"numeric"
         });

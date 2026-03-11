@@ -42,7 +42,7 @@ function TopGenres() {
 
     return (
         <section className="Posts-widget">
-            <span id="component-heading"> Top Genres </span>
+            <span id="component-heading"> 📈 Top Genres </span>
 
             <RadarChart
                 h={200}

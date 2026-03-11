@@ -738,7 +738,7 @@ body {
 }
 
 #comment-body {
-  width: fit-content;
+  width: 100%;
   display: flex;
   color: var(--main-highlight);
 }

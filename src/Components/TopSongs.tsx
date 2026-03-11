@@ -51,7 +51,7 @@ function TopSongs({ MostStreamedSongs }: TopSongsProps) {
 
     return (
         <section className="top-songs">
-            <span id="component-heading"> Your most streamed songs this month </span>
+            <span id="component-heading"> 🏆 Your most streamed songs this month </span>
 
             {MostStreamedSongs?.items?.length
                 ? (

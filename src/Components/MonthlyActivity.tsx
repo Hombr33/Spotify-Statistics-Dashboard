@@ -21,7 +21,7 @@ function MonthlyActivity() {
     return (
         <section className="monthly-activity">
 
-            <span id="component-heading">  Monthly Activity </span>
+            <span id="component-heading"> 📈 Monthly Activity </span>
 
             <div className="monthly-activity-graph">
 

@@ -12,7 +12,7 @@ function Communities() {
 
     return (
         <section className="Communities-widget">
-            <span id="component-heading"> Top five Artists </span>
+            <span id="component-heading"> 🧑‍🎨 Top five Artists </span>
             <BarChart
                 h={200}
                 data={data}
