@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Song from './Song.tsx';
 import { Pagination } from "@mantine/core";
 
@@ -34,6 +35,23 @@ interface RecentlyListenedProps {
 }
 function RecentlyListened({ RecentlyListenedData }: RecentlyListenedProps) {
 
+    const [activePage, setActivePage] = useState(1);
+    
+    function formatDate(inputDate: string) {
+
+        const date = new Date(inputDate);
+        return date.toLocaleTimeString("en-GB", {
+
+            minute: "2-digit",
+            hour: "2-digit",
+            day: "numeric",
+            month: "short",
+            weekday:"long",
+            year:"numeric"
+        });
+
+    }
+
     return (
 
         <section className="recent-widget">
@@ -51,7 +69,7 @@ function RecentlyListened({ RecentlyListenedData }: RecentlyListenedProps) {
 
                     <Song
                         key={key}
-                        played_at={items.played_at}
+                        played_at={formatDate(items.played_at)}
                         name={items.track.name}
                         image={items.track.album.images[0]?.url}
                         artists={items.track.artists[0].name}
@@ -63,6 +81,8 @@ function RecentlyListened({ RecentlyListenedData }: RecentlyListenedProps) {
             <div className="pagination">
                 <Pagination
                     total={5}
+                    value={activePage}
+                    onChange={setActivePage}
                     color="green.7"
                     size="md"
                     radius="sm"
