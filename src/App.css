@@ -741,9 +741,8 @@ body {
 #comment-body {
  display: flex;
   width: fit-content;
-  color: gray;
+  color: var(--text-color);
   font-size: 1.0rem;
-  text-align: center;
 }
 
 .compoenent-top{
