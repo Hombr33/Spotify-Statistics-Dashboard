@@ -19,6 +19,10 @@ body {
   margin: 0 auto;
 }
 
+
+
+
+
 .App {
   display: flex;
   flex-direction: column;
@@ -150,7 +154,7 @@ body {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   background-color: var(--background-secondary);
-  padding: 10px;
+
 }
 
 .nav-logo {
@@ -176,6 +180,7 @@ body {
   display: flex;
   flex-direction: row;
   width: fit-content;
+  padding-right: 10px;
 }
 
 .nav-button {
@@ -498,12 +503,14 @@ body {
 .user-accountBadge a svg {
   font-size: 1.2rem;
   margin-right: 10px;
-  color: var(--main-highlight);
+  color: white;
 }
 
 .user-link a:hover {
   cursor: pointer;
-  text-decoration: underline;
+  background-color: var(--main-highlight);
+  color: white;
+  transition: 0.2s ease-in;
 }
 
 .user-link span {

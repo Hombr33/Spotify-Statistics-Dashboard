@@ -18,6 +18,7 @@ function Main() {
     const [mostStreamedSongs, setMostStreamedSongs] = useState(null);
     const [RecentlyListened_data, setRecentlyListened] = useState(null);
     const [mostStreamed_Artists, setMostStreamedArtists] = useState(null);
+    const [currentSong, setCurrentSong] = useState(null);
 
     useEffect(() => {
 
@@ -95,6 +96,41 @@ function Main() {
 
     }, [access_token])  // run fetchProfile if access_token changes.
 
+
+    useEffect(() => {
+
+        async function fetchCurrentSong() {
+
+            const response = await fetch('/me/player/currently-playing',  {
+
+                method: 'GET',
+                headers: { Authorization: `Bearer ${access_token}` },
+
+            });
+
+
+            if(response.status === 204 || response.status > 400 ) {
+                console.log("Nothing playing, or an error occured. Please try again later.");
+                return;
+            }
+
+            const currentSong = await response.json();
+            setCurrentSong(currentSong);
+            console.log(currentSong);
+        }
+
+        fetchCurrentSong();
+
+        const intervalId = setInterval(() => {
+
+            fetchCurrentSong();
+        }, 30000);
+
+        return () => clearInterval(intervalId);
+
+    }, [access_token]);
+
+
     return (
 
         <div className="Main">
@@ -102,6 +138,8 @@ function Main() {
             <div className="top-component">
                 <EarlyBuildWarning />
                 {profileData && <Profile ProfileData={profileData} />}
+
+                <div> {currentSong} </div>
 
                 {mostStreamedSongs && <TopSongs MostStreamedSongs={mostStreamedSongs}/> }
             </div>

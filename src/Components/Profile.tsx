@@ -1,6 +1,7 @@
 
 import { CopyIcon } from "@radix-ui/react-icons";
 import { IoAlertOutline, IoPersonCircle, IoSparkles } from "react-icons/io5";
+import Toastify from "toastify-js";
 
 interface ProfileProps {
     ProfileData: {
@@ -16,6 +17,21 @@ interface Image {
     url: string;
     height: number;
     width: number;
+}
+
+function CopyLink({ ProfileData }: ProfileProps) {
+
+    navigator.clipboard.writeText(ProfileData.external_urls.spotify);
+
+    Toastify({
+        className: "Toast",
+        text: "link copied to clipboard",
+        duration: 3000,
+        newWindow: false,
+        gravity: "bottom",
+        position: "right"
+
+    }).showToast();
 }
 
 function Profile({ ProfileData }: ProfileProps) {
@@ -43,7 +59,7 @@ function Profile({ ProfileData }: ProfileProps) {
 
                         <div className="user-link">
                             {ProfileData?.external_urls?.spotify ? (
-                                <a href={ProfileData.external_urls.spotify} target="_blank" rel="noreferrer">
+                                <a onClick={() => CopyLink({ ProfileData })}>
                                     <CopyIcon />
                                     {ProfileData.external_urls.spotify}
                                 </a>
