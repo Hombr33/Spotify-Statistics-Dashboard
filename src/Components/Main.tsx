@@ -101,11 +101,10 @@ function Main() {
 
         async function fetchCurrentSong() {
 
-            const response = await fetch('/me/player/currently-playing',  {
+            const response = await fetch('/me/player/currently-playing?cb=${Date.now()}',  {
 
                 method: 'GET',
                 headers: { Authorization: `Bearer ${access_token}` },
-
             });
 
 
@@ -123,7 +122,7 @@ function Main() {
 
         const intervalId = setInterval(() => {
 
-            fetchCurrentSong();
+            fetchCurrentSong();   // run every 30 seconds
         }, 30000);
 
         return () => clearInterval(intervalId);
