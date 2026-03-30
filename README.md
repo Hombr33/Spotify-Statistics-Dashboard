@@ -4,8 +4,6 @@
 This project is a full-stack app designed for data-visualisation. It consists of a TypeScript/React frontend with a Node Backend to store user data securely using MongoDB. 
 The aim of this project is to use Spotify's public API service to get user's data, then to store and display that data using D3 charts library. 
 
- -> Please, do not clone this repository unless you are a recruiter. If you copy my work and try to pass it off as your own (this has happened before!), I will know. 
-
 ---
 ## 📷 Screenshots - Everything is subject to change including this UI
 
