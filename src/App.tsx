@@ -46,8 +46,7 @@ function App() {
   }), ([isLightOn, setLightOn]);
 
   const clientId = '9d3a726e6a8c4914b4646fa6d9d71e04';
-  const redirectUri = 'https://reddit-statistics-app.vercel.app/callback'
-  //const redirectUri = 'https://localhost:5173/callback'
+  const redirectUri = 'https://reddit-statistics-app.vercel.app/callback';
 
   return (
     <MantineProvider data-mantine-color-scheme={isLightOn ? 'dark' : 'light'}>
