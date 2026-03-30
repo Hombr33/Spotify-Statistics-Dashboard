@@ -39,3 +39,10 @@ Project is in early stages of development - screenshots to come.
 This project is a work in progress and will be fully deployed when a working version is completed.
 
 ---
+
+## 📫 Contact
+
+If you're interested in the project, feel free to connect or follow the development:
+
+- GitHub: [hombr33](https://github.com/hombr33)
+- LinkedIn: [Damian Radinoiu](https://www.linkedin.com/in/radinoiu-damian-822579123/)
