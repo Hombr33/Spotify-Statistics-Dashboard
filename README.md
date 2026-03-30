@@ -30,13 +30,6 @@ Project is in early stages of development - screenshots to come.
 - **Frontend**: React, TypeScript, React-router, React-Context, Figma.
 - **Libraries**: D3 Charts, Toastify.js, Mantine UI.
 
----
-
-## 📌 Status
-
-This project is a work in progress and will be fully deployed when a working version is completed.
-
----
 
 ## 📫 Contact
 
