@@ -39,11 +39,3 @@ Project is in early stages of development - screenshots to come.
 This project is a work in progress and will be fully deployed when a working version is completed.
 
 ---
-
-## 📫 Contact
-
-If you're interested in the project, feel free to connect or follow the development:
-
-- GitHub: [DanielSteele1](https://github.com/DanielSteele1)
-- Portfolio: [danielsteele.dev](https://danielsteele.dev)
-- LinkedIn: [Daniel Steele](https://www.linkedin.com/in/daniel-steele1)
